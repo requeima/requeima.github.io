@@ -70,11 +70,15 @@ margin-top:0.0em;
 
     <h2>Machine Learning</h2>
     <p>
-      I'm currently a PhD student studying machine learning at the University of Cambridge in the <a href="http://learning.eng.cam.ac.uk/Public/WebHome">Computational and Biological Learning Lab</a>. My advisor is <a href="http://learning.eng.cam.ac.uk/Public/Turner/Turner">Dr. Richard Turner</a>. I'm interested in Bayesian optimization, reinforcement learning, approximate inference methods, and deep generative models.
+      I'm a PhD student studying machine learning at the University of Cambridge in the <a href="http://learning.eng.cam.ac.uk/Public/WebHome">Computational and Biological Learning Lab</a>. My advisor is <a href="http://learning.eng.cam.ac.uk/Public/Turner/Turner">Dr. Richard Turner</a>. I'm interested in Bayesian optimization, meta-learning, approximate inference methods, and deep generative models.
     </p>
 
     <p>
-      Previously, I completed a Master's in machine learning, speech and language technology at the University of Cambridge where my advisor was <a href="http://mlg.eng.cam.ac.uk/zoubin/">Dr. Zoubin Ghahramani</a>. During my Master's, I worked on an information theoretic acquisition function called IPES for Bayesian optimization. You can find my thesis and code <a href="https://github.com/requeima/thesis-code">here</a>. 
+      I'm currently a visiting student at  <a href="https://mila.quebec/en/">MILA</a> under the supervision of <a href="https://mila.quebec/en/person/bengio-yoshua/">Yoshua Bengio </a>.
+    </p>      
+
+    <p>
+      Previously, I completed a Master's in machine learning, speech and language technology at the University of Cambridge where my advisor was <a href="http://mlg.eng.cam.ac.uk/zoubin/">Dr. Zoubin Ghahramani</a>. During my Master's, I worked on an information theoretic acquisition function called IPES for Bayesian optimization.
     </p>
 
     <h2>Invenia</h2>    
@@ -92,16 +96,167 @@ margin-top:0.0em;
     </p>
 
     <p>
-      When studying mathematics, my specialization was <a href="http://en.wikipedia.org/wiki/Geometric_group_theory">geometric group theory</a>, <a href="http://en.wikipedia.org/wiki/Combinatorial_group_theory">combinatorial group theory</a>, and <a href="http://en.wikipedia.org/wiki/Algebraic_topology">algebraic topology</a>. I studied under <a href="http://en.wikipedia.org/wiki/Daniel_Wise_(mathematician)">Dani Wise</a> at McGill University, who was recently awarded a Guggenheim Fellowship and the Oswald Veblen Prize in Geometry. Here is my  <a href="Thesis.pdf">Master’s thesis</a>.
+      When studying mathematics, my specialization was <a href="http://en.wikipedia.org/wiki/Geometric_group_theory">geometric group theory</a>, <a href="http://en.wikipedia.org/wiki/Combinatorial_group_theory">combinatorial group theory</a>, and <a href="http://en.wikipedia.org/wiki/Algebraic_topology">algebraic topology</a>. I studied under <a href="http://en.wikipedia.org/wiki/Daniel_Wise_(mathematician)">Dani Wise</a> at McGill University, who was recently awarded a Guggenheim Fellowship and the Oswald Veblen Prize in Geometry.
     </p>
+
+    <h2>Publications</h2>    
+    <table border="0" cellspacing="2" cellpadding="2"><tbody>
+
+    <tr>
+    <td valign="top">
+        <a href="https://arxiv.org/abs/1802.07182">
+                <img src="pictures/gpar.png" alt="Link to GPAR paper" width="130px">
+        </a>
+    </td>
+    <td valign="top">
+        <b>The Gaussian Process Autoregressive Regression Model (GPAR)</b>
+        <p>
+            Multi-output regression models must exploit dependencies between outputs to maximise predictive performance. The application of Gaussian processes (GPs) to this setting typically yields models that are computationally demanding and have limited representational power. We present the Gaussian Process Au- toregressive Regression (GPAR) model, a scalable multi-output GP model that is able to capture nonlinear, possibly input-varying, dependencies between outputs in a simple and tractable way: the product rule is used to decompose the joint distribution over the outputs into a set of conditionals, each of which is modelled by a standard GP. GPAR’s efficacy is demonstrated on a variety of synthetic and real-world problems, outperforming existing GP models and achieving state-of-the-art performance on established benchmarks.
+        </p>
+        <a href="jamesr.info/">James Requeima</a>,
+        <a href="https://willtebbutt.github.io/">Will Tebbutt</a>,
+        <a href="https://wesselb.github.io/about">Wessel Bruinsma</a>,
+        <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
+        <br>
+          To appear in <em>International Conference on Artificial Intelligence and Statistics</em>, 2019.
+        <br>
+        <a href="https://arxiv.org/abs/1802.07182">paper</a>
+        | <a href="Papers/GPAR.bib">bibtex</a>
+    </td>
+    </tr>
+
+    <tr><td height="20px"></td></tr>
+
+        <tr>
+    <td valign="top">
+        <a href="https://danielflamshep.github.io/158.pdf">
+                <img src="pictures/characterizingBDNN.png" alt="Link to characterizing BDNN  paper" width="130px">
+        </a>
+    </td>
+    <td valign="top">
+        <b>Characterizing and Warping the Function space of Bayesian Neural Networks</b>
+        <p>
+            In this work we develop a simple method to construct priors for Bayesian neural
+            networks that incorporates meaningful prior information about functions. This
+            method allows us to characterize the relationship between weight space and function
+            space.
+        </p>
+        <a href="https://danielflamshep.github.io/">Daniel Flam-Shepherd</a>,
+        <a href="jamesr.info/">James Requeima</a>,
+        <a href="https://www.cs.toronto.edu/~duvenaud/">David Duvenaud</a>,
+        <br>
+          NeurIPS Bayesian Deep Learning Workshop, 2018.
+        <br>
+        <a href="https://danielflamshep.github.io/158.pdf">paper</a>
+        | <a href="Papers/characterizingBDNN.bib">bibtex</a>
+    </td>
+    </tr>
+
+    <tr><td height="20px"></td></tr>
+
+
+    <tr>
+    <td valign="top">
+        <a href="https://arxiv.org/abs/1706.01825">
+                <img src="pictures/PDTS.png" alt="Link to PDTS paper" width="130px">
+        </a>
+    </td>
+    <td valign="top">
+        <b>Parallel and distributed Thompson sampling for large-scale accelerated exploration of chemical space</b>
+        <p>
+            Chemical space is so large that brute force searches for new interesting molecules are infeasible. High-throughput virtual screening via computer cluster simulations can speed up the discovery process by collecting very large amounts of data in parallel, e.g., up to hundreds or thousands of parallel measurements. Bayesian optimization (BO) can produce additional acceleration by sequentially identifying the most useful simulations or experiments to be performed next. However, current BO methods cannot scale to the large numbers of parallel measurements and the massive libraries of molecules currently used in high-throughput screening. Here, we propose a scalable solution based on a parallel and distributed implementation of Thompson sampling (PDTS). We show that, in small scale problems, PDTS performs similarly as parallel expected improvement (EI), a batch version of the most widely used BO heuristic. Additionally, in settings where parallel EI does not scale, PDTS outperforms other scalable baselines such as a greedy search, ϵ-greedy approaches and a random search method. These results show that PDTS is a successful solution for large-scale parallel BO.
+        </p>
+        <a href="https://jmhl.org/">José Miguel Hernández-Lobato</a>,
+        <a href="jamesr.info/">James Requeima</a>,
+        <a href="https://scholar.google.com/citations?user=efzneU4AAAAJ&hl=en">Edward O. Pyzer-Knapp</a>,
+        <a href="https://matter.toronto.edu/about-us/">Alán Aspuru-Guzik</a>
+        <br>
+          International Conference on Machine Learning, 2017.
+        <br>
+        <a href="https://arxiv.org/abs/1706.01825">paper</a>
+        | <a href="Papers/PDTS.bib">bibtex</a>
+    </td>
+    </tr>
+
+
+    <tr><td height="20px"></td></tr>
+
+
+    <tr>
+    <td valign="top">
+        <a href="http://bayesiandeeplearning.org/2017/papers/65.pdf">
+                <img src="pictures/BDNN_priors.png" alt="Link to BDNN priors paper" width="130px">
+        </a>
+    </td>
+    <td valign="top">
+        <b>Mapping Gaussian Process Priors to Bayesian Neural Networks</b>
+        <p>
+            Currently, BNN priors are specified over network parameters with little thought given to the distributions over functions that are implied. What do N(0, 1) parameter priors look like in function space and is this a reasonable assumption? We should be thinking about priors over functions and that network architecture should be an approximation strategy for these priors. Gaussian Processes offer an elegant mechanism in the kernel to specify properties we believe our underlying function has. In this work we propose a method to, using a BNN, approximate the distribution over functions given by a GP prior.
+        </p>
+        <a href="https://danielflamshep.github.io/">Daniel Flam-Shepherd</a>,
+        <a href="jamesr.info/">James Requeima</a>,
+        <a href="https://www.cs.toronto.edu/~duvenaud/">David Duvenaud</a>,
+        <br>
+          NIPS Bayesian Deep Learning Workshop, 2017.
+        <br>
+        <a href="http://bayesiandeeplearning.org/2017/papers/65.pdf">paper</a>
+        | <a href="Papers/BDNNpriors.bib">bibtex</a>
+    </td>
+    </tr>
+
+    <tr><td height="20px"></td></tr>
+
+
+    <tr>
+    <td valign="top">
+        <a href="Papers/2016masters.pdf">
+                <img src="pictures/cam_logo.png" alt="Link to Cambridge Master’s thesis" width="130px">
+        </a>
+    </td>
+    <td valign="top">
+        <b>Master's Thesis: Integrated Predictive Entropy Search for Bayesian Optimization</b>
+        <p>
+            Predictive Entropy Search (PES) is an information-theoretic based acquisition function that has been demonstrated to perform well on several applications. PES harnesses our estimate of the uncertainty in our objective to recommend query points that maximize the amount of information gained about the local maximizer. It cannot, however, harness the potential information gained in our objective model hyperparameters for better recommendations. This dissertation introduces a modification to the Predictive Entropy Search acquisition function called Integrated Predictive Entropy Search (IPES) that uses a fully Bayesian treatment of our objective model hyperparameters. The IPES aquisition function is the same as the original PES aquision function except that the hyperparameters have been marginalized out of the predictive distribution and so it is able to recommend points taking into account the uncertainty and reduction in uncertainty in the hyperparameters. It can recommend queries that yield more information about the local maximizer through information gained about hyperparameters values.
+        </p>
+        <a href="jamesr.info/">James Requeima</a>,
+        Advisor: <a href="http://mlg.eng.cam.ac.uk/zoubin/">Zoubin Ghahramani</a>
+        <br>
+        <a href="Papers/2016masters.pdf">paper</a>
+        | <a href="Papers/2016masters.bib">bibtex</a>
+        | <a href="https://github.com/requeima/thesis-code">code</a>
+    </td>
+    </tr>
+
+    <tr><td height="20px"></td></tr>
+
+
+    <tr>
+    <td valign="top">
+        <a href="Papers/2009masters.pdf">
+                <img src="pictures/mcgill_logo.png" alt="Link to McGill Master’s thesis" width="130px">
+        </a>
+    </td>
+    <td valign="top">
+        <b>Master's Thesis: Relative sectional curvature in compact angled 2-complexes</b>
+        <p>
+            We define the notion of relative sectional curvature for 2-complexes, and prove that a compact angled 2-complex that has negative sectional curvature relative to planar sections has coherent fundamental group. We analyze a certain type of 1-complex that we call flattenable graphs Γ → X for an compact angled 2-complex X, and show that if X has nonpositive sectional curvature, and if for every flattenable graph π1(Γ) → π1(X) is finitely presented, then X has coherent fundamental group. Finally we show that if X is a compact angled 2-complex with negative sectional curvature relative to π-gons and planar sections then π1(X) is coherent. Some results are provided which are useful for creating examples of 2-complexes with these properties, or to test a 2-complex for these properties.
+        </p>
+        <a href="jamesr.info/">James Requeima</a>,
+        Advisor: <a href="http://en.wikipedia.org/wiki/Daniel_Wise_(mathematician)">Daniel Wise</a>
+        <br>
+        <a href="Papers/2009masters.pdf">paper</a>
+        | <a href="Papers/2009masters.bib">bibtex</a>
+    </td>
+    </tr>
+Here is my  <a href="Thesis.pdf">Master’s thesis</a>.
+    </tbody></table>
+
+
+<tr><td height="10px"></td></tr>
 
     <h2>Interests</h2>    
      <p>
       I enjoy travelling and taking photographs. So far, I have been to Iceland, England, Portugal, Greece, France, Belgium, Germany, Denmark, Sweden, Italy, Cuba, China, Japan, Korea, Cambodia, Thailand and India. You can read about some of my adventures <a href="http://jamesandantonia.blogspot.com/">here</a> or check out some photos <a href="http://jamesandantonia.smugmug.com/">here</a>.
-    </p> 
-
-     <p>
-	  I'm currently playing ice hockey for the Cambridge University Blues. If you want to follow our results you can do so <a href="http://www.buiha.org.uk/division.php?div=144">here</a>. 
     </p> 
 
 
