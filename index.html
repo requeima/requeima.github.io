@@ -86,9 +86,9 @@ margin-top:0.0em;
       I’m also a researcher at <a href="http://invenia.ca/">Invenia Technical Computing</a> based in Winnipeg, Manitoba. We use machine learning techniques to forecast demand for power in the electricity grid, energy production from wind farms, and electricity prices in wholesale power markets. I helped set up our research offices in Montréal, Canada and Cambridge, England.
     </p>
 
-    <p>
+    <!-- <p>
       My colleagues at Invenia and I did some analysis on electricity price time series for a couple of North American wholesale electricity markets. You can find our paper <a href="http://arxiv.org/pdf/1507.06219v1.pdf">here</a>.
-    </p>
+    </p> -->
 
     <h2>Mathematics</h2>    
     <p>
@@ -102,6 +102,33 @@ margin-top:0.0em;
     <h2>Publications</h2>    
     <table border="0" cellspacing="2" cellpadding="2"><tbody>
     
+   <tr>
+    <td valign="top">
+        <a href="https://arxiv.org/abs/1910.13556">
+                <img src="Pictures/ConvCNP.png" alt="Link to ConvCNP paper" width="160px" height="140px">
+        </a>
+    </td>
+    <td valign="top">
+        <b>Convolutional Conditional Neural Processes</b>
+        <p>
+            We introduce the Convolutional Conditional Neural Process (ConvCNP), a new member of the Neural Process family that models translation equivariance in the data. Translation equivariance is an important inductive bias for many learning problems including time series modelling, spatial data, and images. The model embeds data sets into an infinite-dimensional function space as opposed to a finite-dimensional vector space. To formalize this notion, we extend the theory of neural representations of sets to include functional representations, and demonstrate that any translation-equivariant embedding can be represented using a convolutional deep set. We evaluate ConvCNPs in several settings, demonstrating that they achieve state-of-the-art performance compared to existing NPs. We demonstrate that building in translation equivariance enables zero-shot generalization to challenging, out-of-domain tasks.
+        </p>
+        <a href="https://gordonjo.github.io/Jekyll-Mono/about/">Jonathan Gordon</a>,
+        <a href="https://wesselb.github.io/about">Wessel Bruinsma</a>,
+        <a href="http://mlg.eng.cam.ac.uk/?portfolio=andrew-foong-yue-kwang">Andrew Y. K. Foong</a>,
+        <a href="jamesr.info/">James Requeima</a>,
+        <a href="https://yanndubs.github.io/about/">Yann Dubois</a>, <br>
+        <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
+
+        <br>
+          To appear in the <em>International Conference on Learning Representations</em>, 2020.
+        <br>
+        <a href="https://arxiv.org/abs/1910.13556">paper</a>
+    </td>
+    </tr>
+
+    <tr><td height="20px"></td></tr>
+
     <tr>
     <td valign="top">
         <a href="https://arxiv.org/abs/1906.07697">
@@ -120,7 +147,7 @@ margin-top:0.0em;
         <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
 
         <br>
-          To appear as a spotlight paper in the <em>Conference on Neural Information Processing Systems</em>, 2019.
+        <em>Conference on Neural Information Processing Systems</em>, spotlight paper, 2019.
         <br>
         <a href="https://arxiv.org/abs/1906.07697">paper</a>
         <a href="Papers/GPAR.bib">bibtex</a>
@@ -146,7 +173,7 @@ margin-top:0.0em;
         <a href="https://wesselb.github.io/about">Wessel Bruinsma</a>,
         <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
         <br>
-          To appear in <em>International Conference on Artificial Intelligence and Statistics</em>, 2019.
+        <em>International Conference on Artificial Intelligence and Statistics</em>, 2019.
         <br>
         <a href="https://arxiv.org/abs/1802.07182">paper</a>
         <a href="Papers/GPAR.bib">bibtex</a> 
@@ -210,7 +237,6 @@ margin-top:0.0em;
 
     <tr><td height="20px"></td></tr>
 
-
     <tr>
     <td valign="top">
         <a href="http://bayesiandeeplearning.org/2017/papers/65.pdf">
@@ -235,7 +261,6 @@ margin-top:0.0em;
 
     <tr><td height="20px"></td></tr>
 
-
     <tr>
     <td valign="top">
         <a href="Papers/2016masters.pdf">
@@ -258,6 +283,28 @@ margin-top:0.0em;
 
     <tr><td height="20px"></td></tr>
 
+
+    <tr>
+    <td valign="top">
+        <a href="https://arxiv.org/abs/1507.06219">
+                <img src="Pictures/PJM_prices.png" alt="Link to wholesale electricity prices paper" width="160px" height="160px">
+        </a>
+    </td>
+    <td valign="top">
+        <b>Multi-scaling of wholesale electricity prices</b>
+        <p>
+            We empirically analyze the most volatile component of the electricity price time series from two North-American wholesale electricity markets. We show that these time series exhibit fluctuations which are not described by a Brownian Motion, as they show multi-scaling, high Hurst exponents and sharp price movements. We use the generalized Hurst exponent (GHE, H(q)) to show that although these time-series have strong cyclical components, the fluctuations exhibit persistent behaviour, i.e., H(q)>0.5. We investigate the effectiveness of the GHE as a predictive tool in a simple linear forecasting model, and study the forecast error as a function of H(q), with q=1 and q=2. Our results suggest that the GHE can be used as prediction tool for these time series when the Hurst exponent is dynamically evaluated on rolling time windows of size ≈50−100 hours. These results are also compared to the case in which the cyclical components have been subtracted from the time series, showing the importance of cyclicality in the prediction power of the Hurst exponent.
+        </p>
+        <a href="https://sites.google.com/site/francescocaravelli/">Francesco Caravelli</a>,
+        <a href="jamesr.info/">James Requeima</a>,
+        <a href="https://uk.linkedin.com/in/cozmin-ududec-471a2954">Cozmin Ududec</a>,
+        <br>
+          arXiv e-print.
+        <br>
+        <a href="https://arxiv.org/abs/1507.06219">paper</a>
+        | <a href="Papers/caravelli2015multiscaling.bib">bibtex</a>
+    </td>
+    </tr>
 
     <tr>
     <td valign="top">
