@@ -101,6 +101,55 @@ margin-top:0.0em;
     <table border="0" cellspacing="2" cellpadding="2"><tbody>
     
     <tr>
+            <td valign="top">
+                <a href="https://arxiv.org/abs/2108.09676">
+                        <img src="Pictures/EfficientGaussianNeuralProcessesforRegression.png" alt="Link to ConvNP paper" width="150px" height="100px">
+                </a>
+            </td>
+            <td valign="top">
+                <b>Efficient Gaussian Neural Processes for Regression</b>
+                <p>Conditional Neural Processes (CNP; Garnelo et al., 2018) are an attractive family of meta-learning models which produce well-calibrated predictions, enable fast inference at test time, and are trainable via a simple maximum likelihood procedure. A limitation of CNPs is their inability to model dependencies in the outputs. This significantly hurts predictive performance and renders it impossible to draw coherent function samples, which limits the applicability of CNPs in down-stream applications and decision making. Neural Processes (NPs; Garnelo et al., 2018) attempt to alleviate this issue by using latent variables, relying on these to model output dependencies, but introduces difficulties stemming from approximate inference. One recent alternative (Bruinsma et al.,2021), which we refer to as the FullConvGNP, models dependencies in the predictions while still being trainable via exact maximum-likelihood. Unfortunately, the FullConvGNP relies on expensive 2D-dimensional convolutions, which limit its applicability to only one-dimensional data. In this work, we present an alternative way to model output dependencies which also lends itself maximum likelihood training but, unlike the FullConvGNP, can be scaled to two- and three-dimensional data. The proposed models exhibit good performance in synthetic experiments. </p>
+                <a href="https://github.com/stratisMarkou">Stratis Markou</a>, 
+                <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima</a>, 
+                <a href="https://wesselb.github.io/about">Wessel Bruinsma</a>,
+                <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
+        
+                <br>
+                ICML <em>Uncertainty and Robustness in Deep Learning Workshop</em>, 2021.
+                <br>
+                <a href="https://arxiv.org/abs/2108.09676">paper</a>
+            </td>
+            </tr>
+        
+            <tr><td height="20px"></td></tr>        
+
+
+        <tr>
+            <td valign="top">
+                <a href="https://arxiv.org/abs/2101.03606">
+                        <img src="Pictures/GNP.png" alt="Link to ConvNP paper" width="150px" height="100px">
+                </a>
+            </td>
+            <td valign="top">
+                <b>The Gaussian Neural Process</b>
+                <p>
+                    Neural Processes (NPs; Garnelo et al., 2018) are a rich class of models for meta-learning that map data sets directly to predictive stochastic processes. We provide a rigorous analysis of the standard maximum-likelihood objective used to train conditional NPs. Moreover, we propose a new member to the Neural Process family called the Gaussian Neural Process (GNP), which models predictive correlations, incorporates translation equivariance, provides universal approximation guarantees, and demonstrates encouraging performance.</p>
+                <a href="https://wesselb.github.io/about">Wessel Bruinsma</a>,
+                <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima</a>, 
+                <a href="http://mlg.eng.cam.ac.uk/?portfolio=andrew-foong-yue-kwang">Andrew Y. K. Foong</a>,
+                <a href="https://gordonjo.github.io/Jekyll-Mono/about/">Jonathan Gordon</a>,
+                <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
+        
+                <br>
+                <em>Advances in Approximate Bayesian Inference Symposium</em>, 2020.
+                <br>
+                <a href="https://arxiv.org/abs/2101.03606">paper</a>
+            </td>
+            </tr>
+        
+            <tr><td height="20px"></td></tr>    
+
+    <tr>
     <td valign="top">
         <a href="https://arxiv.org/abs/2007.01332">
                 <img src="Pictures/ConvNP.png" alt="Link to ConvNP paper" width="150px" height="100px">
@@ -119,7 +168,7 @@ margin-top:0.0em;
         <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
 
         <br>
-        To appear at the <em>Conference on Neural Information Processing Systems</em>, 2020.
+        <em>Neural Information Processing Systems</em>, 2020.
         <br>
         <a href="https://arxiv.org/abs/2007.01332">paper</a>
     </td>
