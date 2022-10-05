@@ -78,7 +78,7 @@ margin-top:0.0em;
     </p>      
 
     <p>
-      Previously, I completed a Master's in machine learning, speech and language technology at the University of Cambridge where my advisor was <a href="http://mlg.eng.cam.ac.uk/zoubin/">Dr. Zoubin Ghahramani</a>.
+      Previously, I completed a Master's in machine learning, speech and language technology at the University of Cambridge where my advisor was <a href="http://mlg.eng.cam.ac.uk/zoubin/">Dr. Zoubin Ghahramani</a> <a href="https://en.wikipedia.org/wiki/Fellow_of_the_Royal_Society">FRS</a>.
     </p>
 
     <h2>Invenia</h2>    
@@ -88,13 +88,12 @@ margin-top:0.0em;
 
     <h2>Mathematics</h2>    
     <p>
-      At one point, I was a tenured member of the <a href="http://www.dawsoncollege.qc.ca/mathematics/">Department of Mathematics at Dawson College</a> in Montréal. If you're looking for CEGEP-level materials and online resources, my colleagues and I maintain <a href="http://obeymath.org/">this website</a>.
+      At one point, I was a tenured member of the <a href="http://www.dawsoncollege.qc.ca/mathematics/">Department of Mathematics at Dawson College</a> in Montréal. If you're looking for CEGEP-level materials and online resources, my colleagues and I maintain <a href="http://obeymath.org/">this website</a>. You can also see my <a href="http://obeymath.org/Main/JamesRequeima">previously taught courses.</a> 
     </p>
 
     <p>
-      When studying mathematics, my specialization was <a href="http://en.wikipedia.org/wiki/Geometric_group_theory">geometric group theory</a>, <a href="http://en.wikipedia.org/wiki/Combinatorial_group_theory">combinatorial group theory</a>, and <a href="http://en.wikipedia.org/wiki/Algebraic_topology">algebraic topology</a>. I studied under <a href="http://en.wikipedia.org/wiki/Daniel_Wise_(mathematician)">Dani Wise</a> at McGill University, who was recently awarded a Guggenheim Fellowship and the Oswald Veblen Prize in Geometry.
+      When studying mathematics, my specialization was <a href="http://en.wikipedia.org/wiki/Geometric_group_theory">geometric group theory</a>, <a href="http://en.wikipedia.org/wiki/Combinatorial_group_theory">combinatorial group theory</a>, and <a href="http://en.wikipedia.org/wiki/Algebraic_topology">algebraic topology</a>. I studied under <a href="http://en.wikipedia.org/wiki/Daniel_Wise_(mathematician)">Dani Wise</a> <a href="https://en.wikipedia.org/wiki/Fellow_of_the_Royal_Society">FRS</a> at McGill University, who was recently awarded a Guggenheim Fellowship and the Oswald Veblen Prize in Geometry.
     </p>
-
 
 
     <h2>Publications</h2>    
@@ -131,14 +130,14 @@ margin-top:0.0em;
             <td valign="top">
                 <b>Practical Conditional Neural Processes Via Tractable Dependent Predictions</b>
                 <p>Conditional Neural Processes (CNPs; Garnelo et al., 2018a) are meta-learning models which leverage the flexibility of deep learning to produce well-calibrated predictions and naturally handle off-the-grid and missing data. CNPs scale to large datasets and train with ease. Due to these features, CNPs appear well-suited to tasks from environmental sciences or healthcare. Unfortunately, CNPs do not produce correlated predictions, making them fundamentally inappropriate for many estimation and decision making tasks. Predicting heat waves or floods, for example, requires modelling dependencies in temperature or precipitation over time and space. Existing approaches which model output dependencies, such as Neural Processes (NPs; Garnelo et al., 2018b) or the FullConvGNP (Bruinsma et al., 2021), are either complicated to train or prohibitively expensive. What is needed is an approach which provides dependent predictions, but is simple to train and computationally tractable. In this work, we present a new class of Neural Process models that make correlated predictions and support exact maximum likelihood training that is simple and scalable. We extend the proposed models by using invertible output transformations, to capture non-Gaussian output distributions. Our models can be used in downstream estimation tasks which require dependent function samples. By accounting for output dependencies, our models show improved predictive performance on a range of experiments with synthetic and real data. </p>
-                <a href="https://github.com/stratisMarkou">Stratis Markou</a>, 
-                <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima</a>, 
+                <a href="https://github.com/stratisMarkou">Stratis Markou*</a>, 
+                <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima*</a>, 
                 <a href="https://wesselb.github.io/about">Wessel Bruinsma</a>,
                 <a href="https://scholar.google.com/citations?user=oO-dzBoAAAAJ&hl=en">Anna Vaughan</a>,
                 <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
         
                 <br>
-                To be presented at the <em>International Conference on Learning Representations</em>, 2022.
+                <em>International Conference on Learning Representations</em>, 2022.
                 <br>
                 <a href="https://arxiv.org/abs/2203.08775">paper</a>
             </td>
@@ -156,8 +155,8 @@ margin-top:0.0em;
             <td valign="top">
                 <b>Efficient Gaussian Neural Processes for Regression</b>
                 <p>Conditional Neural Processes (CNP; Garnelo et al., 2018) are an attractive family of meta-learning models which produce well-calibrated predictions, enable fast inference at test time, and are trainable via a simple maximum likelihood procedure. A limitation of CNPs is their inability to model dependencies in the outputs. This significantly hurts predictive performance and renders it impossible to draw coherent function samples, which limits the applicability of CNPs in down-stream applications and decision making. Neural Processes (NPs; Garnelo et al., 2018) attempt to alleviate this issue by using latent variables, relying on these to model output dependencies, but introduces difficulties stemming from approximate inference. One recent alternative (Bruinsma et al.,2021), which we refer to as the FullConvGNP, models dependencies in the predictions while still being trainable via exact maximum-likelihood. Unfortunately, the FullConvGNP relies on expensive 2D-dimensional convolutions, which limit its applicability to only one-dimensional data. In this work, we present an alternative way to model output dependencies which also lends itself maximum likelihood training but, unlike the FullConvGNP, can be scaled to two- and three-dimensional data. The proposed models exhibit good performance in synthetic experiments. </p>
-                <a href="https://github.com/stratisMarkou">Stratis Markou</a>, 
-                <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima</a>, 
+                <a href="https://github.com/stratisMarkou">Stratis Markou*</a>, 
+                <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima*</a>, 
                 <a href="https://wesselb.github.io/about">Wessel Bruinsma</a>,
                 <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
         
@@ -207,9 +206,9 @@ margin-top:0.0em;
         <p>
             Stationary stochastic processes (SPs) are a key component of many probabilistic models, such as those for off-the-grid spatio-temporal data. They enable the statistical symmetry of underlying physical phenomena to be leveraged, thereby aiding generalization. Prediction in such models can be viewed as a translation equivariant map from observed data sets to predictive SPs, emphasizing the intimate relationship between stationarity and equivariance. Building on this, we propose the Convolutional Neural Process (ConvNP), which endows Neural Processes (NPs) with translation equivariance and extends convolutional conditional NPs to allow for dependencies in the predictive distribution. The latter enables ConvNPs to be deployed in settings which require coherent samples, such as Thompson sampling or conditional image completion. Moreover, we propose a new maximum-likelihood objective to replace the standard ELBO objective in NPs, which conceptually simplifies the framework and empirically improves performance. We demonstrate the strong performance and generalization capabilities of ConvNPs on 1D regression, image completion, and various tasks with real-world spatio-temporal data.
         </p>
-        <a href="http://mlg.eng.cam.ac.uk/?portfolio=andrew-foong-yue-kwang">Andrew Y. K. Foong</a>,
-        <a href="https://wesselb.github.io/about">Wessel Bruinsma</a>,
-        <a href="https://gordonjo.github.io/Jekyll-Mono/about/">Jonathan Gordon</a>,
+        <a href="http://mlg.eng.cam.ac.uk/?portfolio=andrew-foong-yue-kwang">Andrew Y. K. Foong*</a>,
+        <a href="https://wesselb.github.io/about">Wessel Bruinsma*</a>,
+        <a href="https://gordonjo.github.io/Jekyll-Mono/about/">Jonathan Gordon*</a>,
         <a href="https://yanndubs.github.io/about/">Yann Dubois</a>, 
         <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima</a>, <br>
         <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
@@ -234,10 +233,10 @@ margin-top:0.0em;
         <p>
             Modern meta-learning approaches for image classification rely on increasingly deep networks to achieve state-of-the-art performance, making batch normalization an essential component of meta-learning pipelines. However, the hierarchical nature of the meta-learning setting presents several challenges that can render conventional batch normalization ineffective, giving rise to the need to rethink normalization in this setting. We evaluate a range of approaches to batch normalization for meta-learning scenarios, and develop a novel approach that we call TaskNorm. Experiments on fourteen datasets demonstrate that the choice of batch normalization has a dramatic effect on both classification accuracy and training time for both gradient based and gradient-free meta-learning approaches. Importantly, TaskNorm is found to consistently improve performance. Finally, we provide a set of best practices for normalization that will allow fair comparison of meta-learning algorithms.
         </p>
-        <a href="http://mlg.eng.cam.ac.uk/?portfolio=john-bronskill">John Bronskill</a>,
-        <a href="https://gordonjo.github.io/Jekyll-Mono/about/">Jonathan Gordon</a>,
+        <a href="http://mlg.eng.cam.ac.uk/?portfolio=john-bronskill">John Bronskill*</a>,
+        <a href="https://gordonjo.github.io/Jekyll-Mono/about/">Jonathan Gordon*</a>,
         <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en/">James Requeima</a>,
-        <a href="http://www.nowozin.net/sebastian/">Sebastian Nowozin</a>
+        <a href="http://www.nowozin.net/sebastian/">Sebastian Nowozin</a>, 
         <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
 
         <br>
@@ -261,8 +260,8 @@ margin-top:0.0em;
         <p>
             We introduce the Convolutional Conditional Neural Process (ConvCNP), a new member of the Neural Process family that models translation equivariance in the data. Translation equivariance is an important inductive bias for many learning problems including time series modelling, spatial data, and images. The model embeds data sets into an infinite-dimensional function space as opposed to a finite-dimensional vector space. To formalize this notion, we extend the theory of neural representations of sets to include functional representations, and demonstrate that any translation-equivariant embedding can be represented using a convolutional deep set. We evaluate ConvCNPs in several settings, demonstrating that they achieve state-of-the-art performance compared to existing NPs. We demonstrate that building in translation equivariance enables zero-shot generalization to challenging, out-of-domain tasks.
         </p>
-        <a href="https://gordonjo.github.io/Jekyll-Mono/about/">Jonathan Gordon</a>,
-        <a href="https://wesselb.github.io/about">Wessel Bruinsma</a>,
+        <a href="https://gordonjo.github.io/Jekyll-Mono/about/">Jonathan Gordon*</a>,
+        <a href="https://wesselb.github.io/about">Wessel Bruinsma*</a>,
         <a href="http://mlg.eng.cam.ac.uk/?portfolio=andrew-foong-yue-kwang">Andrew Y. K. Foong</a>,
         <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima</a>,
         <a href="https://yanndubs.github.io/about/">Yann Dubois</a>, <br>
@@ -288,9 +287,9 @@ margin-top:0.0em;
         <p>
             The goal of this paper is to design image classification systems that, after an initial multi-task training phase, can automatically adapt to new tasks encountered at test time. We introduce a conditional neural process based approach to the multi-task classification setting for this purpose, and establish connections to the meta-learning and few-shot learning literature. The resulting approach, called CNAPs, comprises a classifier whose parameters are modulated by an adaptation network that takes the current task's dataset as input. We demonstrate that CNAPs achieves state-of-the-art results on the challenging Meta-Dataset benchmark indicating high-quality transfer-learning. We show that the approach is robust, avoiding both over-fitting in low-shot regimes and under-fitting in high-shot regimes. Timing experiments reveal that CNAPs is computationally efficient at test-time as it does not involve gradient based adaptation. Finally, we show that trained models are immediately deployable to continual learning and active learning where they can outperform existing approaches that do not leverage transfer learning.
         </p>
-        <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en/">James Requeima</a>,
-        <a href="https://gordonjo.github.io/Jekyll-Mono/about/">Jonathan Gordon</a>,
-        <a href="http://mlg.eng.cam.ac.uk/?portfolio=john-bronskill">John Bronskill</a>,
+        <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en/">James Requeima*</a>,
+        <a href="https://gordonjo.github.io/Jekyll-Mono/about/">Jonathan Gordon*</a>,
+        <a href="http://mlg.eng.cam.ac.uk/?portfolio=john-bronskill">John Bronskill*</a>,
         <a href="http://www.nowozin.net/sebastian/">Sebastian Nowozin</a>,
         <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
 
@@ -316,9 +315,9 @@ margin-top:0.0em;
         <p>
             Multi-output regression models must exploit dependencies between outputs to maximise predictive performance. The application of Gaussian processes (GPs) to this setting typically yields models that are computationally demanding and have limited representational power. We present the Gaussian Process Au- toregressive Regression (GPAR) model, a scalable multi-output GP model that is able to capture nonlinear, possibly input-varying, dependencies between outputs in a simple and tractable way: the product rule is used to decompose the joint distribution over the outputs into a set of conditionals, each of which is modelled by a standard GP. GPAR’s efficacy is demonstrated on a variety of synthetic and real-world problems, outperforming existing GP models and achieving state-of-the-art performance on established benchmarks.
         </p>
-        <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima</a>,
-        <a href="https://willtebbutt.github.io/">Will Tebbutt</a>,
-        <a href="https://wesselb.github.io/about">Wessel Bruinsma</a>,
+        <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima*</a>,
+        <a href="https://willtebbutt.github.io/">Will Tebbutt*</a>,
+        <a href="https://wesselb.github.io/about">Wessel Bruinsma*</a>,
         <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
         <br>
         <em>International Conference on Artificial Intelligence and Statistics</em>, 2019.
@@ -370,8 +369,8 @@ margin-top:0.0em;
         <p>
             Chemical space is so large that brute force searches for new interesting molecules are infeasible. High-throughput virtual screening via computer cluster simulations can speed up the discovery process by collecting very large amounts of data in parallel, e.g., up to hundreds or thousands of parallel measurements. Bayesian optimization (BO) can produce additional acceleration by sequentially identifying the most useful simulations or experiments to be performed next. However, current BO methods cannot scale to the large numbers of parallel measurements and the massive libraries of molecules currently used in high-throughput screening. Here, we propose a scalable solution based on a parallel and distributed implementation of Thompson sampling (PDTS). We show that, in small scale problems, PDTS performs similarly as parallel expected improvement (EI), a batch version of the most widely used BO heuristic. Additionally, in settings where parallel EI does not scale, PDTS outperforms other scalable baselines such as a greedy search, ϵ-greedy approaches and a random search method. These results show that PDTS is a successful solution for large-scale parallel BO.
         </p>
-        <a href="https://jmhl.org/">José Miguel Hernández-Lobato</a>,
-        <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima</a>,
+        <a href="https://jmhl.org/">José Miguel Hernández-Lobato*</a>,
+        <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima*</a>,
         <a href="https://scholar.google.com/citations?user=efzneU4AAAAJ&hl=en">Edward O. Pyzer-Knapp</a>,
         <a href="https://matter.toronto.edu/about-us/">Alán Aspuru-Guzik</a>
         <br>
