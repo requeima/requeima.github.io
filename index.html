@@ -104,28 +104,76 @@ margin-top:0.0em;
     <table border="0" cellspacing="2" cellpadding="2"><tbody>
         <tr>
             <td valign="top">
-                <a href="https://arxiv.org/abs/2405.12856">
-                    <img src="Pictures/LLMP.png" alt="Link to paper" width="140px", height="140px">
+            <a href="https://arxiv.org/abs/2405.12856">
+                <img src="Pictures/LLMP.png" alt="Link to paper" width="140px", height="140px">
+            </a>
+        </td>
+        <td valign="top">
+            <b>LLM Processes: Numerical Predictive Distributions Conditioned on Natural Language</b>
+            <p>Machine learning practitioners often face significant challenges in formally integrating their prior knowledge and beliefs into predictive models, limiting the potential for nuanced and context-aware analyses. Moreover, the expertise needed to integrate this prior knowledge into probabilistic modeling typically limits the application of these models to specialists. Our goal is to build a regression model that can process numerical data and make probabilistic predictions at arbitrary locations, guided by natural language text which describes a user's prior knowledge. Large Language Models (LLMs) provide a useful starting point for designing such a tool since they 1) provide an interface where users can incorporate expert insights in natural language and 2) provide an opportunity for leveraging latent problem-relevant knowledge encoded in LLMs that users may not have themselves. We start by exploring strategies for eliciting explicit, coherent numerical predictive distributions from LLMs. We examine these joint predictive distributions, which we call LLM Processes, over arbitrarily-many quantities in settings such as forecasting, multi-dimensional regression, black-box optimization, and image modeling. We investigate the practical details of prompting to elicit coherent predictive distributions, and demonstrate their effectiveness at regression. Finally, we demonstrate the ability to usefully incorporate text into numerical predictions, improving predictive performance and giving quantitative structure that reflects qualitative descriptions. This lets us begin to explore the rich, grounded hypothesis space that LLMs implicitly encode. </p>
+            <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima*</a>,
+            <a href="http://mlg.eng.cam.ac.uk/?portfolio=john-bronskill">John Bronskill*</a>,
+            <a href="https://www.cs.toronto.edu/~choidami/">Dami Choi</a>,
+            <a href="https://www.cs.toronto.edu/~duvenaud/">David Duvenaud</a>,
+            <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
+            <a href="https://scholar.google.com/citations?user=2tT1j9QAAAAJ&hl=en&oi=ao">Tom R. Andersson</a>,
+
+            <br>
+            <em> In submission</em>, 2024.
+            <br>
+            <a href="https://arxiv.org/abs/2405.12856">paper</a>
+        </td>
+        </tr>
+    
+        <tr><td height="20px"></td></tr> 
+        <tr>
+            <td valign="top">
+                <a href="https://arxiv.org/abs/2404.00411v1">
+                    <img src="Pictures/aardvark.png" alt="Link to paper" width="140px", height="120px">
                 </a>
             </td>
             <td valign="top">
-                <b>LLM Processes: Numerical Predictive Distributions Conditioned on Natural Language</b>
-                <p>Machine learning practitioners often face significant challenges in formally integrating their prior knowledge and beliefs into predictive models, limiting the potential for nuanced and context-aware analyses. Moreover, the expertise needed to integrate this prior knowledge into probabilistic modeling typically limits the application of these models to specialists. Our goal is to build a regression model that can process numerical data and make probabilistic predictions at arbitrary locations, guided by natural language text which describes a user's prior knowledge. Large Language Models (LLMs) provide a useful starting point for designing such a tool since they 1) provide an interface where users can incorporate expert insights in natural language and 2) provide an opportunity for leveraging latent problem-relevant knowledge encoded in LLMs that users may not have themselves. We start by exploring strategies for eliciting explicit, coherent numerical predictive distributions from LLMs. We examine these joint predictive distributions, which we call LLM Processes, over arbitrarily-many quantities in settings such as forecasting, multi-dimensional regression, black-box optimization, and image modeling. We investigate the practical details of prompting to elicit coherent predictive distributions, and demonstrate their effectiveness at regression. Finally, we demonstrate the ability to usefully incorporate text into numerical predictions, improving predictive performance and giving quantitative structure that reflects qualitative descriptions. This lets us begin to explore the rich, grounded hypothesis space that LLMs implicitly encode. </p>
-                <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima*</a>,
-                <a href="http://mlg.eng.cam.ac.uk/?portfolio=john-bronskill">John Bronskill*</a>,
-                <a href="https://www.cs.toronto.edu/~choidami/">Dami Choiu</a>,
-                <a href="https://www.cs.toronto.edu/~duvenaud/">David Duvenaud</a>,
+                <b>Aardvark Weather: end-to-end data-driven weather forecasting</b>
+                <p>Machine learning is revolutionising medium-range weather prediction. However it has only been applied to specific and individual components of the weather prediction pipeline. Consequently these data-driven approaches are unable to be deployed without input from conventional operational numerical weather prediction (NWP) systems, which is computationally costly and does not support end-to-end optimisation. In this work, we take a radically different approach and replace the entire NWP pipeline with a machine learning model. We present Aardvark Weather, the first end-to-end data-driven forecasting system which takes raw observations as input and provides both global and local forecasts. These global forecasts are produced for 24 variables at multiple pressure levels at one-degree spatial resolution and 24 hour temporal resolution, and are skillful with respect to hourly climatology at five to seven day lead times. Local forecasts are produced for temperature, mean sea level pressure, and wind speed at a geographically diverse set of weather stations, and are skillful with respect to an IFS-HRES interpolation baseline at multiple lead-times. Aardvark, by virtue of its simplicity and scalability, opens the door to a new paradigm for performing accurate and efficient data-driven medium-range weather forecasting.  </p>
+                <a href="https://scholar.google.com/citations?user=oO-dzBoAAAAJ&hl=en">Anna Vaughan</a>,
+                <a href="https://github.com/stratisMarkou">Stratis Markou</a>,
+                <a href="https://willtebbutt.github.io/">Will Tebbutt</a>,
+                <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima</a>,
+                <a href="https://wesselb.github.io/about">Wessel Bruinsma</a>,
+                <a href="https://www.geog.cam.ac.uk/people/herzog/">Michael Herzog</a>,
+                <a href="https://www.cst.cam.ac.uk/people/ndl32">Nic Lane</a>,
+                <a href="https://scholar.google.com/citations?user=Z9vzJ2cAAAAJ&hl=en&oi=sra">J. Scott Hosking</a>, 
                 <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
-        
                 <br>
-                <em> In submission.</em>, 2024.
-                <br>
-                <a href="https://arxiv.org/abs/2405.12856">paper</a>
+                <a href="https://arxiv.org/abs/2404.00411v1">paper</a>
             </td>
             </tr>
         
             <tr><td height="20px"></td></tr> 
 
+            <tr>
+                <td valign="top">
+                    <a href="https://openreview.net/forum?id=pftXzp6Yn3&referrer=%5Bthe%20profile%20of%20Matthew%20Ashman%5D(%2Fprofile%3Fid%3D~Matthew_Ashman1)">
+                        <img src="Pictures/TETNP.png" alt="Link to paper" width="140px", height="120px">
+                    </a>
+                </td>
+                <td valign="top">
+                    <b>Translation Equivariant Transformer Neural Processes</b>
+                    <p>The effectiveness of neural processes (NPs) in modelling posterior prediction maps---the mapping from data to posterior predictive distributions---has significantly improved since their inception. This improvement can be attributed to two principal factors: (1) advancements in the architecture of permutation invariant set functions, which are intrinsic to all NPs; and (2) leveraging symmetries present in the true posterior predictive map, which are problem dependent. Transformers are a notable development in permutation invariant set functions, and their utility within NPs has been demonstrated through the family of models we refer to as TNPs. Despite significant interest in TNPs, little attention has been given to incorporating symmetries. Notably, the posterior prediction maps for data that are stationary---a common assumption in spatio-temporal modelling---exhibit translation equivariance. In this paper, we introduce of a new family of translation equivariant TNPs that incorporate translation equivariance. Through an extensive range of experiments on synthetic and real-world spatio-temporal data, we demonstrate the effectiveness of TE-TNPs relative to their non-translation-equivariant counterparts and other NP baselines.  </p>
+                    <a href="https://mattashman.github.io/">Matt Ashman</a>,
+                    <a href="https://cbl.eng.cam.ac.uk/people/cdd43/">Cristiana Diaconu</a>,
+                    <a href="https://uk.linkedin.com/in/junhyuck-kim-29308920a">Junhyuck Kim</a>,
+                    <a href="https://lakeesiv.com/">Lakee Sivaraya</a>,
+                    <a href="https://github.com/stratisMarkou">Stratis Markou</a>,
+                    <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima</a>,
+                    <a href="https://wesselb.github.io/about">Wessel Bruinsma</a>,
+                    <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
+                    <br>
+                    <a href="https://openreview.net/forum?id=pftXzp6Yn3&referrer=%5Bthe%20profile%20of%20Matthew%20Ashman%5D(%2Fprofile%3Fid%3D~Matthew_Ashman1)">paper</a>
+                </td>
+                </tr>
+            
+                <tr><td height="20px"></td></tr> 
 
         <tr>
             <td valign="top">
