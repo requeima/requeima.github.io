@@ -141,8 +141,7 @@ margin-top:0.0em;
         </td>
         <td valign="top">
             <b>Context is Key: A Benchmark for Forecasting with Essential Textual Information</b>
-            <p>Forecasting is a critical task in decision making across various domains. While numerical data provides a foundation, it often lacks crucial context necessary for accurate predictions. Human forecasters frequently rely on additional information, such as background knowledge or constraints, which can be efficiently communicated through natural language. However, the ability of existing forecasting models to effectively integrate this textual information remains an open question. To address this, we introduce "Context is Key" (CiK), a time series forecasting benchmark that pairs numerical data with diverse types of carefully crafted textual context, requiring models to integrate both modalities. We evaluate a range of approaches, including statistical models, time series foundation models, and LLM-based forecasters, and propose a simple yet effective LLM prompting method that outperforms all other tested methods on our benchmark. Our experiments highlight the importance of incorporating contextual information, demonstrate surprising performance when using LLM-based forecasting models, and also reveal some of their critical shortcomings. By presenting this benchmark, we aim to advance multimodal forecasting, promoting models that are both accurate and accessible to decision-makers with varied technical expertise. </p>
-            <br>
+            <p>Forecasting is a critical task in decision making across various domains. While numerical data provides a foundation, it often lacks crucial context necessary for accurate predictions. Human forecasters frequently rely on additional information, such as background knowledge or constraints, which can be efficiently communicated through natural language. However, the ability of existing forecasting models to effectively integrate this textual information remains an open question. To address this, we introduce "Context is Key" (CiK), a time series forecasting benchmark that pairs numerical data with diverse types of carefully crafted textual context, requiring models to integrate both modalities. We evaluate a range of approaches, including statistical models, time series foundation models, and LLM-based forecasters, and propose a simple yet effective LLM prompting method that outperforms all other tested methods on our benchmark. Our experiments highlight the importance of incorporating contextual information, demonstrate surprising performance when using LLM-based forecasting models, and also reveal some of their critical shortcomings. By presenting this benchmark, we aim to advance multimodal forecasting, promoting models that are both accurate and accessible to decision-makers with varied technical expertise.</p>
             <a href="https://scholar.google.ca/citations?user=6gnCkJ0AAAAJ&hl=en&oi=ao">Andrew Robert Williams*</a>,
             <a href="https://scholar.google.ca/citations?hl=en&user=4ur98b4AAAAJ">Arjun Ashok*</a>,
             <a href="https://scholar.google.ca/citations?hl=en&user=NwSnV9UAAAAJ">Étienne Marcotte</a>,
@@ -161,6 +160,54 @@ margin-top:0.0em;
         </td>
         </tr>
         
+        <tr><td height="20px"></td></tr>
+
+
+        <tr>
+            <td valign="top">
+            <a href="https://arxiv.org/abs/2412.06472">
+                <img src="Pictures/FFT.png" alt="Link to paper" width="140px",  height="100px">
+            </a>
+        </td>
+        <td valign="top">
+            <b>Food for thought: How can machine learning help better predict and understand changes in food prices?</b>
+            <p>In this work, we address a lack of systematic understanding of fluctuations in food affordability in Canada. Canada's Food Price Report (CPFR) is an annual publication that predicts food inflation over the next calendar year. The published predictions are a collaborative effort between forecasting teams that each employ their own approach at Canadian Universities: Dalhousie University, the University of British Columbia, the University of Saskatchewan, and the University of Guelph/Vector Institute. While the University of Guelph/Vector Institute forecasting team has leveraged machine learning (ML) in previous reports, the most recent editions (2024--2025) have also included a human-in-the-loop approach. For the 2025 report, this focus was expanded to evaluate several different data-centric approaches to improve forecast accuracy. In this study, we evaluate how different types of forecasting models perform when estimating food price fluctuations. We also examine the sensitivity of models that curate time series data representing key factors in food pricing.</p>
+            Kristina L. Kupferschmidt, 
+            <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima</a>,
+            Mya Simpson, 
+            Zohrah Varsallay, 
+            Ethan Jackson, 
+            Cody Kupferschmidt, 
+            Sara El-Shawa, 
+            Graham W. Taylor
+            <br>
+            <em> Preprint</em>, 2024.
+            <br>
+            <a href="https://arxiv.org/abs/2412.06472">paper</a>
+        </td>
+        </tr>
+        
+        <tr><td height="20px"></td></tr>
+
+
+        <tr>
+            <td valign="top">
+            <a href="https://www.dal.ca/sites/agri-food/research/canada-s-food-price-report-2025.html">
+                <img src="Pictures/CFPR2025.png" alt="Link to paper" width="140px",  height="180px">
+            </a>
+        </td>
+        <td valign="top">
+            <b>Canada's Food Price Report 2025</b>
+            <p>This year marks the 15th edition of Canada's Food Price Report (CFPR), an annual publication produced collaboratively by Dalhousie University, the University of Guelph, the University of British Columbia, and the University of Saskatchewan. Each of these universities contributes to enriching the report's scope and regional expertise. The cross-country research team uses historical data sources, machine learning algorithms, and predictive analytics tools to forecast Canadian food prices. </p>
+            Sylvain Charlebois, Andrea Rankin, Stacey Taylor, Bryce Cross, Vlado Keselj, Stefanie Colombo, Tiff-Annie Kenny, John Keogh, Paola A. Marignani, Janet Music, Rick Nason, Armağan Özbilge, Samantha Taylor, Evan Fraser, Ethan Jackson, Kristina Kupferschmidt, Graham Taylor, Maria Corradini, Cody Kupferschmidt, Mya Simpson, Zohra Varsally, Sara El-Shawa, Paul Uys, 
+            <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima</a>,
+            Stuart Smyth, Claire Williams, Kate Sauser, Savannah Gleim, Kelleen Wiseman, Richard Barichello, Matias Margulis, Rebecca Feng, Janet Lord, Kim Humes, Jann McFarlane
+            <br>
+            <a href="https://cdn.dal.ca/content/dam/dalhousie/pdf/sites/agri-food/EN%20-%20Food%20Price%20Report%202025.pdf">Englist Report</a>
+            | <a href="https://cdn.dal.ca/content/dam/dalhousie/pdf/sites/agri-food/FR%20-%20Food%20Price%20Report%202025.pdf">French Report</a>
+        </td>
+        </tr>
+
 
         <tr><td height="20px"></td></tr>
         
@@ -183,6 +230,7 @@ margin-top:0.0em;
             <em> In-context Learning Workshop ICML (Best paper award)</em>, 2024.
             <br>
             <a href="https://arxiv.org/abs/2405.12856">paper</a>
+            | <a href="https://github.com/requeima/llm_processes">code</a>
         </td>
         </tr>
 
