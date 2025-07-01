@@ -139,53 +139,6 @@ margin-top:0.0em;
         
             <tr><td height="20px"></td></tr> 
 
-            <tr>
-                <td valign="top">
-                    <a href="https://arxiv.org/abs/2410.18959">
-                    <img src="Pictures/jolt.png" alt="Link to paper" width="140px", height="110px">
-                    </a>
-                </td>
-                <td valign="top">
-                    <b>JoLT: Joint Probabilistic Predictions on Tabular Data Using LLMs.</b>
-                    <p>We introduce a simple method for probabilistic predictions on tabular data based on Large Language Models (LLMs) called JoLT (Joint LLM Process for Tabular data). JoLT uses the in-context learning capabilities of LLMs to define joint distributions over tabular data conditioned on user-specified side information about the problem, exploiting the vast repository of latent problem-relevant knowledge encoded in LLMs. JoLT defines joint distributions for multiple target variables with potentially heterogeneous data types without any data conversion, data preprocessing, special handling of missing data, or model training, making it accessible and efficient for practitioners. Our experiments show that JoLT outperforms competitive methods on low-shot single-target and multi-target tabular classification and regression tasks. Furthermore, we show that JoLT can automatically handle missing data and perform data imputation by leveraging textual side information. We argue that due to its simplicity and generality, JoLT is an effective approach for a wide variety of real prediction problems.</p>
-                    <a href="https://scholar.google.ca/citations?user=Zm8hNeUAAAAJ&hl=en&oi=ao">Aliaksandra Shysheya*</a>,
-                    <a href="http://mlg.eng.cam.ac.uk/?portfolio=john-bronskill">John Bronskill*</a>,
-                    <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima</a>,
-                    <a href="https://shoaibahmed.github.io/">Shoaib Ahmed Siddiqui</a>,
-                    <a href="https://scholar.google.com/citations?user=ynIWXnUAAAAJ&hl=en">Javier González</a>,
-                    <a href="https://www.cs.toronto.edu/~duvenaud/">David Duvenaud</a>,
-                    <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
-                    <br>
-                    <em> In submission, 2025.
-                    <br>
-                    <a href="https://arxiv.org/abs/2502.11877">paper</a>
-                </td>
-                </tr>
-            
-                <tr><td height="20px"></td></tr> 
-
-        <tr>
-            <td valign="top">
-            <a href="https://arxiv.org/abs/2412.16577">
-                <img src="Pictures/BCNP.png" alt="Link to paper" width="140px", height="120px">
-            </a>
-        </td>
-        <td valign="top">
-            <b>A Meta-Learning Approach to Bayesian Causal Discovery</b>
-            <p>Discovering a unique causal structure is difficult due to both inherent identifiability issues, and the consequences of finite data. As such, uncertainty over causal structures, such as those obtained from a Bayesian posterior, are often necessary for downstream tasks. Finding an accurate approximation to this posterior is challenging, due to the large number of possible causal graphs, as well as the difficulty in the subproblem of finding posteriors over the functional relationships of the causal edges. Recent works have used meta-learning to view the problem of estimating the maximum a-posteriori causal graph as supervised learning. Yet, these methods are limited when estimating the full posterior as they fail to encode key properties of the posterior, such as correlation between edges and permutation equivariance with respect to nodes. Further, these methods also cannot reliably sample from the posterior over causal structures. To address these limitations, we propose a Bayesian meta learning model that allows for sampling causal structures from the posterior and encodes these key properties. We compare our meta-Bayesian causal discovery against existing Bayesian causal discovery methods, demonstrating the advantages of directly learning a posterior over causal structure. </p>
-            <a href="https://scholar.google.com/citations?user=nuA78i0AAAAJ&hl=en">Anish Dhir</a>,
-            <a href="https://mattashman.github.io/">Matt Ashman</a>,
-            <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima</a>,
-            <a href="https://scholar.google.co.uk/citations?user=PKcjcT4AAAAJ&hl=en">Mark van der Wilk</a>
-            <br>
-            <em> Accepted to International Conference on Learning Representations</em>, 2025.
-            <br>
-            <a href="https://arxiv.org/abs/2412.16577">paper</a> | <a href="https://github.com/Anish144/CausalStructureNeuralProcess">code</a> 
-        </td>
-        </tr>
-
-        <tr><td height="20px"></td></tr> 
-    
         <tr>
             <td valign="top">
             <a href="https://arxiv.org/abs/2410.18959">
@@ -207,7 +160,7 @@ margin-top:0.0em;
             <a href="https://scholar.google.ca/citations?hl=en&user=QdnjDj8AAAAJ">Nicolas Chapados</a>
             <a href="https://scholar.google.ca/citations?hl=en&user=LR6aJcEAAAAJ">Alexandre Drouin</a>
             <br>
-            <em> In submission</em>, 2025.
+            <em> International Conference on Machine Learning</em>, 2025.
             <br>
             <a href="https://arxiv.org/abs/2410.18959">paper</a> | <a href="https://github.com/ServiceNow/context-is-key-forecasting">code</a> | <a href="https://servicenow.github.io/context-is-key-forecasting/v0/">benchmark</a>
         </td>
@@ -215,7 +168,53 @@ margin-top:0.0em;
         
         <tr><td height="20px"></td></tr>
 
+            <tr>
+                <td valign="top">
+                    <a href="https://arxiv.org/abs/2410.18959">
+                    <img src="Pictures/jolt.png" alt="Link to paper" width="140px", height="110px">
+                    </a>
+                </td>
+                <td valign="top">
+                    <b>JoLT: Joint Probabilistic Predictions on Tabular Data Using LLMs.</b>
+                    <p>We introduce a simple method for probabilistic predictions on tabular data based on Large Language Models (LLMs) called JoLT (Joint LLM Process for Tabular data). JoLT uses the in-context learning capabilities of LLMs to define joint distributions over tabular data conditioned on user-specified side information about the problem, exploiting the vast repository of latent problem-relevant knowledge encoded in LLMs. JoLT defines joint distributions for multiple target variables with potentially heterogeneous data types without any data conversion, data preprocessing, special handling of missing data, or model training, making it accessible and efficient for practitioners. Our experiments show that JoLT outperforms competitive methods on low-shot single-target and multi-target tabular classification and regression tasks. Furthermore, we show that JoLT can automatically handle missing data and perform data imputation by leveraging textual side information. We argue that due to its simplicity and generality, JoLT is an effective approach for a wide variety of real prediction problems.</p>
+                    <a href="https://scholar.google.ca/citations?user=Zm8hNeUAAAAJ&hl=en&oi=ao">Aliaksandra Shysheya*</a>,
+                    <a href="http://mlg.eng.cam.ac.uk/?portfolio=john-bronskill">John Bronskill*</a>,
+                    <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima</a>,
+                    <a href="https://shoaibahmed.github.io/">Shoaib Ahmed Siddiqui</a>,
+                    <a href="https://scholar.google.com/citations?user=ynIWXnUAAAAJ&hl=en">Javier González</a>,
+                    <a href="https://www.cs.toronto.edu/~duvenaud/">David Duvenaud</a>,
+                    <a href="http://cbl.eng.cam.ac.uk/Public/Turner/Turner">Richard E. Turner</a>
+                    <br>
+                    <em>In submission, 2025.
+                    <br>
+                    <a href="https://arxiv.org/abs/2502.11877">paper</a>
+                </td>
+                </tr>
+            
+                <tr><td height="20px"></td></tr> 
 
+        <tr>
+            <td valign="top">
+            <a href="https://arxiv.org/abs/2412.16577">
+                <img src="Pictures/BCNP.png" alt="Link to paper" width="140px", height="120px">
+            </a>
+        </td>
+        <td valign="top">
+            <b>A Meta-Learning Approach to Bayesian Causal Discovery</b>
+            <p>Discovering a unique causal structure is difficult due to both inherent identifiability issues, and the consequences of finite data. As such, uncertainty over causal structures, such as those obtained from a Bayesian posterior, are often necessary for downstream tasks. Finding an accurate approximation to this posterior is challenging, due to the large number of possible causal graphs, as well as the difficulty in the subproblem of finding posteriors over the functional relationships of the causal edges. Recent works have used meta-learning to view the problem of estimating the maximum a-posteriori causal graph as supervised learning. Yet, these methods are limited when estimating the full posterior as they fail to encode key properties of the posterior, such as correlation between edges and permutation equivariance with respect to nodes. Further, these methods also cannot reliably sample from the posterior over causal structures. To address these limitations, we propose a Bayesian meta learning model that allows for sampling causal structures from the posterior and encodes these key properties. We compare our meta-Bayesian causal discovery against existing Bayesian causal discovery methods, demonstrating the advantages of directly learning a posterior over causal structure. </p>
+            <a href="https://scholar.google.com/citations?user=nuA78i0AAAAJ&hl=en">Anish Dhir</a>,
+            <a href="https://mattashman.github.io/">Matt Ashman</a>,
+            <a href="https://scholar.google.ca/citations?user=fyYPWBsAAAAJ&hl=en">James Requeima</a>,
+            <a href="https://scholar.google.co.uk/citations?user=PKcjcT4AAAAJ&hl=en">Mark van der Wilk</a>
+            <br>
+            <em> International Conference on Learning Representations</em>, 2025.
+            <br>
+            <a href="https://arxiv.org/abs/2412.16577">paper</a> | <a href="https://github.com/Anish144/CausalStructureNeuralProcess">code</a> 
+        </td>
+        </tr>
+
+        <tr><td height="20px"></td></tr> 
+    
         <tr>
             <td valign="top">
             <a href="https://arxiv.org/abs/2412.06472">
@@ -241,7 +240,6 @@ margin-top:0.0em;
         </tr>
         
         <tr><td height="20px"></td></tr>
-
 
         <tr>
             <td valign="top">
