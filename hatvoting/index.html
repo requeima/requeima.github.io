@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HSO Attack BB — Coaches Cap Lookbook &amp; Ranked Ballot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&family=Inter:wght@400;500;600;700&display=swap');
+
+    :root {
+      --hso-red: #D9232E;
+      --hso-gold: #F5B82E;
+      --hso-dark: #0B0D10;
+      --hso-card: #14181F;
+      --hso-border: #252B36;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--hso-dark);
+      color: #F3F4F6;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .font-display {
+      font-family: 'Barlow Condensed', sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    .ice-grid {
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(217, 35, 46, 0.14), transparent 55%),
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 100% 100%, 36px 36px, 36px 36px;
+    }
+
+    .cap-card {
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cap-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(245, 184, 46, 0.45);
+      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7);
+    }
+
+    .lightbox-img {
+      transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .lightbox-img.zoomed {
+      transform: scale(1.85);
+      cursor: zoom-out;
+    }
+  </style>
+</head>
+<body class="ice-grid min-h-screen flex flex-col">
+
+  <!-- Top Header -->
+  <header class="sticky top-0 z-30 border-b border-gray-800/90 bg-[#0B0D10]/90 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#D9232E] to-[#99151E] flex items-center justify-center font-display font-extrabold text-white text-xl shadow-lg shadow-red-950/50 border border-red-400/30">
+          HSO
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="font-display text-2xl sm:text-3xl font-extrabold uppercase tracking-wide text-white leading-none">
+              HSO Attack <span class="text-[#F5B82E]">BB</span>
+            </h1>
+            <span class="hidden sm:inline-block text-[11px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-red-500/15 text-red-300 border border-red-500/30">
+              Coaches Cap Vote
+            </span>
+          </div>
+          <p class="text-xs text-gray-400 mt-0.5">Hockey Sud-Ouest • Custom Team Headwear Mockups</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="#ballot-section" class="px-3.5 py-2 rounded-lg bg-[#D9232E] hover:bg-[#b91c26] text-white text-xs sm:text-sm font-semibold transition shadow-md shadow-red-950/40">
+          Cast Ballot ↓
+        </a>
+        <button onclick="copySummary()" id="copyBtn" class="px-3 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs sm:text-sm font-medium border border-gray-700 transition flex items-center gap-1.5" title="Copy results to paste into coaches group chat">
+          <svg class="w-4 h-4 text-[#F5B82E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+          </svg>
+          <span id="copyBtnText">Copy Summary</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full space-y-10">
+
+    <!-- Intro Banner -->
+    <section class="rounded-2xl bg-[#14181F] border border-gray-800 p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="space-y-1.5 max-w-2xl">
+        <h2 class="text-lg sm:text-xl font-bold text-white">Compare the 4 Finalist Cap Concepts</h2>
+        <p class="text-sm text-gray-300 leading-relaxed">
+          Tap any mockup to zoom in on the front, side, and back embroidery details. Once you’ve compared the styles, rank your <strong class="text-[#F5B82E]">1st (3 pts)</strong>, <strong class="text-gray-200">2nd (2 pts)</strong>, and <strong class="text-amber-600">3rd (1 pt)</strong> choices below—or use the quick-rank buttons right on each card.
+        </p>
+      </div>
+      <div class="flex items-center gap-3 shrink-0 bg-black/35 px-4 py-3 rounded-xl border border-gray-800/80">
+        <div class="text-center">
+          <div id="statBallots" class="font-display text-2xl font-extrabold text-white">0</div>
+          <div class="text-[11px] uppercase tracking-wider text-gray-400">Ballots</div>
+        </div>
+        <div class="h-8 w-px bg-gray-800"></div>
+        <div class="text-left">
+          <div class="text-[11px] uppercase tracking-wider text-gray-400">Current Leader</div>
+          <div id="statLeader" class="text-sm font-bold text-[#F5B82E]">No votes yet</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 Cap Cards Grid -->
+    <section aria-label="Cap Options">
+      <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- Ballot & Live Standings Split Section -->
+    <section id="ballot-section" class="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-2">
+
+      <!-- Ranked Ballot Form -->
+      <div class="lg:col-span-6 rounded-2xl bg-[#14181F] border border-gray-800 p-5 sm:p-6 space-y-5">
+        <div class="border-b border-gray-800 pb-4">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#D9232E]">Step 2 • Submit Your Picks</span>
+          <h2 class="font-display text-2xl font-extrabold uppercase text-white mt-0.5">Coaches Ranked Ballot</h2>
+          <p class="text-xs text-gray-400 mt-1">Points system: 1st Place = 3 pts • 2nd Place = 2 pts • 3rd Place = 1 pt</p>
+        </div>
+
+        <form id="ballotForm" class="space-y-4">
+          <div>
+            <label for="coachName" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5">
+              Coach Name <span class="text-red-400">*</span>
+            </label>
+            <input
+              type="text"
+              id="coachName"
+              required
+              placeholder="e.g., Coach Marc / James"
+              class="w-full px-3.5 py-2.5 rounded-xl bg-[#0B0D10] border border-gray-700 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#F5B82E]"
+            />
+          </div>
+
+          <div class="grid grid-cols-1 gap-3">
+            <div class="p-3 rounded-xl bg-[#0B0D10] border border-gray-800">
+              <label for="rank1" class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#F5B82E] mb-1.5">
+                <span>🥇 1st Choice (3 Points)</span>
+                <span class="text-[11px] font-normal text-gray-400">Required</span>
+              </label>
+              <select id="rank1" required onchange="syncSelects()" class="w-full px-3 py-2 rounded-lg bg-[#14181F] border border-gray-700 text-sm text-white focus:outline-none focus:border-[#F5B82E]">
+                <option value="">Select your top choice...</option>
+              </select>
+            </div>
+
+            <div class="p-3 rounded-xl bg-[#0B0D10] border border-gray-800">
+              <label for="rank2" class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-gray-200
