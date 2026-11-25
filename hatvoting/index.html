@@ -8,17 +8,9 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&family=Inter:wght@400;500;600;700&display=swap');
 
-    :root {
-      --hso-red: #D9232E;
-      --hso-gold: #F5B82E;
-      --hso-dark: #0B0D10;
-      --hso-card: #14181F;
-      --hso-border: #252B36;
-    }
-
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--hso-dark);
+      background-color: #0B0D10;
       color: #F3F4F6;
       -webkit-tap-highlight-color: transparent;
     }
@@ -82,7 +74,7 @@
         <a href="#ballot-section" class="px-3.5 py-2 rounded-lg bg-[#D9232E] hover:bg-[#b91c26] text-white text-xs sm:text-sm font-semibold transition shadow-md shadow-red-950/40">
           Cast Ballot ↓
         </a>
-        <button onclick="copySummary()" id="copyBtn" class="px-3 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs sm:text-sm font-medium border border-gray-700 transition flex items-center gap-1.5" title="Copy results to paste into coaches group chat">
+        <button type="button" onclick="copySummary()" id="copyBtn" class="px-3 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs sm:text-sm font-medium border border-gray-700 transition flex items-center gap-1.5">
           <svg class="w-4 h-4 text-[#F5B82E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
           </svg>
@@ -116,10 +108,142 @@
       </div>
     </section>
 
-    <!-- 4 Cap Cards Grid -->
+    <!-- 4 Static Cap Cards -->
     <section aria-label="Cap Options">
-      <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Populated by JS -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Option A -->
+        <article class="cap-card rounded-2xl bg-[#14181F] border border-gray-800 overflow-hidden flex flex-col">
+          <div class="relative group bg-black cursor-zoom-in overflow-hidden aspect-[16/10]" onclick="openLightbox(0)">
+            <img src="/Pictures/hatvoting/images/hat1.jpeg" alt="Option A: Black Red-Rope Snapback" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300" />
+            <div class="absolute top-3 left-3 flex items-center gap-1.5">
+              <span class="px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-sm text-xs font-extrabold uppercase tracking-wider text-[#F5B82E] border border-yellow-500/30">Option A</span>
+              <span class="px-2 py-1 rounded-lg bg-black/70 backdrop-blur-sm text-[11px] font-medium text-gray-200 border border-white/10">3-Angle View</span>
+            </div>
+            <button type="button" onclick="event.stopPropagation(); openLightbox(0)" class="absolute bottom-3 right-3 px-2.5 py-1.5 rounded-lg bg-black/80 hover:bg-[#D9232E] text-white text-xs font-semibold border border-white/15 backdrop-blur-sm transition">
+              🔍 Inspect
+            </button>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="font-display text-2xl font-extrabold uppercase text-white tracking-wide">Black Red-Rope Snapback</h3>
+              <ul class="mt-2.5 space-y-1.5 text-xs text-gray-300">
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Crown: All-black structured snapback with red top button</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Trim: Braided crimson rope across the visor</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Front: Bear head + "HOCKEY SUD-OUEST" bar embroidery</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Side &amp; Back: Yellow "BB" side hit + arched "ATTACK" back</span></li>
+              </ul>
+            </div>
+            <div class="pt-3 border-t border-gray-800/90 flex items-center justify-between gap-2">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-gray-400">Quick Rank:</span>
+              <div class="flex items-center gap-1.5">
+                <button type="button" data-pick="A-1" onclick="quickPick('A', 1)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-[#F5B82E]">1st</button>
+                <button type="button" data-pick="A-2" onclick="quickPick('A', 2)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-gray-300">2nd</button>
+                <button type="button" data-pick="A-3" onclick="quickPick('A', 3)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-amber-500">3rd</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Option B -->
+        <article class="cap-card rounded-2xl bg-[#14181F] border border-gray-800 overflow-hidden flex flex-col">
+          <div class="relative group bg-black cursor-zoom-in overflow-hidden aspect-[16/10]" onclick="openLightbox(1)">
+            <img src="/Pictures/hatvoting/images/hat2.jpeg" alt="Option B: Red &amp; White Mesh Trucker" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300" />
+            <div class="absolute top-3 left-3 flex items-center gap-1.5">
+              <span class="px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-sm text-xs font-extrabold uppercase tracking-wider text-[#F5B82E] border border-yellow-500/30">Option B</span>
+              <span class="px-2 py-1 rounded-lg bg-black/70 backdrop-blur-sm text-[11px] font-medium text-gray-200 border border-white/10">3-Angle View</span>
+            </div>
+            <button type="button" onclick="event.stopPropagation(); openLightbox(1)" class="absolute bottom-3 right-3 px-2.5 py-1.5 rounded-lg bg-black/80 hover:bg-[#D9232E] text-white text-xs font-semibold border border-white/15 backdrop-blur-sm transition">
+              🔍 Inspect
+            </button>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="font-display text-2xl font-extrabold uppercase text-white tracking-wide">Red &amp; White Mesh Trucker</h3>
+              <ul class="mt-2.5 space-y-1.5 text-xs text-gray-300">
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Crown: Red front panel &amp; bill with crisp white trucker mesh</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Trim: White braided rope + red top button</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Front: Woven "HS Bear Hockey Sud-Ouest" rectangular patch</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Side &amp; Back: Yellow "BB" on side mesh + "ATTACK" back</span></li>
+              </ul>
+            </div>
+            <div class="pt-3 border-t border-gray-800/90 flex items-center justify-between gap-2">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-gray-400">Quick Rank:</span>
+              <div class="flex items-center gap-1.5">
+                <button type="button" data-pick="B-1" onclick="quickPick('B', 1)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-[#F5B82E]">1st</button>
+                <button type="button" data-pick="B-2" onclick="quickPick('B', 2)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-gray-300">2nd</button>
+                <button type="button" data-pick="B-3" onclick="quickPick('B', 3)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-amber-500">3rd</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Option C -->
+        <article class="cap-card rounded-2xl bg-[#14181F] border border-gray-800 overflow-hidden flex flex-col">
+          <div class="relative group bg-black cursor-zoom-in overflow-hidden aspect-[16/10]" onclick="openLightbox(2)">
+            <img src="/Pictures/hatvoting/images/hat3.jpeg" alt="Option C: Clean Black Attack Hockey Snapback" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300" />
+            <div class="absolute top-3 left-3 flex items-center gap-1.5">
+              <span class="px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-sm text-xs font-extrabold uppercase tracking-wider text-[#F5B82E] border border-yellow-500/30">Option C</span>
+              <span class="px-2 py-1 rounded-lg bg-black/70 backdrop-blur-sm text-[11px] font-medium text-gray-200 border border-white/10">Front &amp; Back</span>
+            </div>
+            <button type="button" onclick="event.stopPropagation(); openLightbox(2)" class="absolute bottom-3 right-3 px-2.5 py-1.5 rounded-lg bg-black/80 hover:bg-[#D9232E] text-white text-xs font-semibold border border-white/15 backdrop-blur-sm transition">
+              🔍 Inspect
+            </button>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="font-display text-2xl font-extrabold uppercase text-white tracking-wide">Clean Black "Attack Hockey" Snapback</h3>
+              <ul class="mt-2.5 space-y-1.5 text-xs text-gray-300">
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Crown: Sleek all-black snapback (no rope) with red eyelets &amp; button</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Front: Centered "ATTACK HOCKEY" split-bar bear embroidery</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Back: Stacked "HSO" with yellow "BB" script above snap</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Vibe: Clean pro-style bench cap</span></li>
+              </ul>
+            </div>
+            <div class="pt-3 border-t border-gray-800/90 flex items-center justify-between gap-2">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-gray-400">Quick Rank:</span>
+              <div class="flex items-center gap-1.5">
+                <button type="button" data-pick="C-1" onclick="quickPick('C', 1)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-[#F5B82E]">1st</button>
+                <button type="button" data-pick="C-2" onclick="quickPick('C', 2)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-gray-300">2nd</button>
+                <button type="button" data-pick="C-3" onclick="quickPick('C', 3)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-amber-500">3rd</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Option D -->
+        <article class="cap-card rounded-2xl bg-[#14181F] border border-gray-800 overflow-hidden flex flex-col">
+          <div class="relative group bg-black cursor-zoom-in overflow-hidden aspect-[16/10]" onclick="openLightbox(3)">
+            <img src="/Pictures/hatvoting/images/hat4.jpeg" alt="Option D: Clean Black Full-Logo Snapback" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300" />
+            <div class="absolute top-3 left-3 flex items-center gap-1.5">
+              <span class="px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-sm text-xs font-extrabold uppercase tracking-wider text-[#F5B82E] border border-yellow-500/30">Option D</span>
+              <span class="px-2 py-1 rounded-lg bg-black/70 backdrop-blur-sm text-[11px] font-medium text-gray-200 border border-white/10">Front &amp; Back</span>
+            </div>
+            <button type="button" onclick="event.stopPropagation(); openLightbox(3)" class="absolute bottom-3 right-3 px-2.5 py-1.5 rounded-lg bg-black/80 hover:bg-[#D9232E] text-white text-xs font-semibold border border-white/15 backdrop-blur-sm transition">
+              🔍 Inspect
+            </button>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="font-display text-2xl font-extrabold uppercase text-white tracking-wide">Clean Black Full-Logo Snapback</h3>
+              <ul class="mt-2.5 space-y-1.5 text-xs text-gray-300">
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Crown: All-black snapback (no rope) with red eyelets &amp; button</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Front: Full diagonal "HSO ATTACK BB" roaring bear crest</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Back: Standalone roaring bear head above snap closure</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Vibe: Classic full-crest team identity</span></li>
+              </ul>
+            </div>
+            <div class="pt-3 border-t border-gray-800/90 flex items-center justify-between gap-2">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-gray-400">Quick Rank:</span>
+              <div class="flex items-center gap-1.5">
+                <button type="button" data-pick="D-1" onclick="quickPick('D', 1)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-[#F5B82E]">1st</button>
+                <button type="button" data-pick="D-2" onclick="quickPick('D', 2)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-gray-300">2nd</button>
+                <button type="button" data-pick="D-3" onclick="quickPick('D', 3)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-amber-500">3rd</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
     </section>
 
@@ -139,13 +263,7 @@
             <label for="coachName" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5">
               Coach Name <span class="text-red-400">*</span>
             </label>
-            <input
-              type="text"
-              id="coachName"
-              required
-              placeholder="e.g., Coach Marc / James"
-              class="w-full px-3.5 py-2.5 rounded-xl bg-[#0B0D10] border border-gray-700 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#F5B82E]"
-            />
+            <input type="text" id="coachName" required placeholder="e.g., Coach Marc / James" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0B0D10] border border-gray-700 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#F5B82E]" />
           </div>
 
           <div class="grid grid-cols-1 gap-3">
@@ -156,8 +274,319 @@
               </label>
               <select id="rank1" required onchange="syncSelects()" class="w-full px-3 py-2 rounded-lg bg-[#14181F] border border-gray-700 text-sm text-white focus:outline-none focus:border-[#F5B82E]">
                 <option value="">Select your top choice...</option>
+                <option value="A">Option A — Black Red-Rope Snapback</option>
+                <option value="B">Option B — Red &amp; White Mesh Trucker</option>
+                <option value="C">Option C — Clean Black "Attack Hockey" Snapback</option>
+                <option value="D">Option D — Clean Black Full-Logo Snapback</option>
               </select>
             </div>
 
             <div class="p-3 rounded-xl bg-[#0B0D10] border border-gray-800">
-              <label for="rank2" class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-gray-200
+              <label for="rank2" class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-gray-200 mb-1.5">
+                <span>🥈 2nd Choice (2 Points)</span>
+                <span class="text-[11px] font-normal text-gray-400">Optional</span>
+              </label>
+              <select id="rank2" onchange="syncSelects()" class="w-full px-3 py-2 rounded-lg bg-[#14181F] border border-gray-700 text-sm text-white focus:outline-none focus:border-[#F5B82E]">
+                <option value="">Select runner-up...</option>
+                <option value="A">Option A — Black Red-Rope Snapback</option>
+                <option value="B">Option B — Red &amp; White Mesh Trucker</option>
+                <option value="C">Option C — Clean Black "Attack Hockey" Snapback</option>
+                <option value="D">Option D — Clean Black Full-Logo Snapback</option>
+              </select>
+            </div>
+
+            <div class="p-3 rounded-xl bg-[#0B0D10] border border-gray-800">
+              <label for="rank3" class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-amber-500 mb-1.5">
+                <span>🥉 3rd Choice (1 Point)</span>
+                <span class="text-[11px] font-normal text-gray-400">Optional</span>
+              </label>
+              <select id="rank3" onchange="syncSelects()" class="w-full px-3 py-2 rounded-lg bg-[#14181F] border border-gray-700 text-sm text-white focus:outline-none focus:border-[#F5B82E]">
+                <option value="">Select 3rd choice...</option>
+                <option value="A">Option A — Black Red-Rope Snapback</option>
+                <option value="B">Option B — Red &amp; White Mesh Trucker</option>
+                <option value="C">Option C — Clean Black "Attack Hockey" Snapback</option>
+                <option value="D">Option D — Clean Black Full-Logo Snapback</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="coachNote" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5">
+              Notes / Tweaks (Optional)
+            </label>
+            <textarea id="coachNote" rows="2" placeholder="e.g., Love the red rope on A, or prefer B if we keep the BB yellow..." class="w-full px-3.5 py-2 rounded-xl bg-[#0B0D10] border border-gray-700 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#F5B82E]"></textarea>
+          </div>
+
+          <div id="formAlert" class="hidden text-xs px-3.5 py-2.5 rounded-lg"></div>
+
+          <button type="submit" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-[#D9232E] to-[#b51923] hover:from-[#e42935] hover:to-[#c81d28] text-white font-bold text-sm uppercase tracking-wider shadow-lg shadow-red-950/50 transition cursor-pointer">
+            Submit Coach Vote
+          </button>
+        </form>
+      </div>
+
+      <!-- Live Standings & Ballots Log -->
+      <div class="lg:col-span-6 rounded-2xl bg-[#14181F] border border-gray-800 p-5 sm:p-6 flex flex-col justify-between space-y-6">
+        <div class="space-y-5">
+          <div class="flex items-center justify-between border-b border-gray-800 pb-4">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-[#F5B82E]">Live Tally</span>
+              <h2 class="font-display text-2xl font-extrabold uppercase text-white mt-0.5">Standings &amp; Feedback</h2>
+            </div>
+            <button type="button" onclick="resetDeviceBallots()" class="text-[11px] text-gray-500 hover:text-red-400 underline transition">
+              Reset My Browser Votes
+            </button>
+          </div>
+
+          <div id="standingsContainer" class="space-y-3.5">
+            <div class="text-xs text-gray-400">Submit a ballot on the left to update the live point totals.</div>
+          </div>
+
+          <div class="pt-2 space-y-2.5">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-gray-400">Submitted Ballots</h3>
+            <div id="ballotsList" class="space-y-2 max-h-64 overflow-y-auto pr-1">
+              <div class="text-xs text-gray-500 italic py-3 text-center border border-dashed border-gray-800 rounded-xl">No ballots submitted yet.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-black/40 border border-gray-800/90 p-3.5 text-xs text-gray-400">
+          Each coach’s picks save directly on their device. Click <strong class="text-gray-200">Copy Summary</strong> at the top to paste your ranked ballot straight into the coaches group chat!
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-800/80 py-5 text-center text-xs text-gray-500">
+    Hockey Sud-Ouest • HSO Attack BB Team Headwear Mockups
+  </footer>
+
+  <!-- Full-Screen Zoom Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md flex flex-col">
+    <div class="flex items-center justify-between px-4 sm:px-6 py-3.5 border-b border-gray-800">
+      <div>
+        <span id="lbTag" class="text-xs font-bold uppercase tracking-wider text-[#F5B82E]">Option A</span>
+        <h3 id="lbTitle" class="text-base sm:text-lg font-bold text-white">Title</h3>
+      </div>
+      <div class="flex items-center gap-2">
+        <button type="button" onclick="toggleZoom()" id="zoomBtn" class="px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs font-semibold text-white border border-gray-700">
+          🔍 Zoom (1.85x)
+        </button>
+        <button type="button" onclick="closeLightbox()" class="p-2 rounded-lg bg-gray-800 hover:bg-red-600 text-white transition" aria-label="Close">
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <div class="flex-1 relative overflow-auto flex items-center justify-center p-4 select-none" onclick="if(event.target===this) closeLightbox()">
+      <button type="button" onclick="stepLightbox(-1)" class="absolute left-3 sm:left-6 z-10 px-3.5 py-2.5 rounded-full bg-black/70 hover:bg-[#D9232E] text-white border border-gray-700 transition" aria-label="Previous">◀</button>
+      <img id="lbImage" src="" alt="Cap Mockup" onclick="toggleZoom()" class="lightbox-img max-h-[76vh] max-w-full rounded-xl shadow-2xl cursor-zoom-in object-contain" />
+      <button type="button" onclick="stepLightbox(1)" class="absolute right-3 sm:right-6 z-10 px-3.5 py-2.5 rounded-full bg-black/70 hover:bg-[#D9232E] text-white border border-gray-700 transition" aria-label="Next">▶</button>
+    </div>
+
+    <div class="px-4 py-3 border-t border-gray-800 text-center text-xs text-gray-400">
+      <span id="lbDesc">Specs</span> • <span class="text-gray-500">Click image to toggle zoom • Use ← / → arrow keys</span>
+    </div>
+  </div>
+
+  <script>
+    var CAPS = [
+      { id: 'A', code: 'Option A', name: 'Black Red-Rope Snapback', img: '/Pictures/hatvoting/images/hat1.jpeg', desc: 'Black crown, red braided rope, Hockey Sud-Ouest front, yellow BB side, Attack back.' },
+      { id: 'B', code: 'Option B', name: 'Red & White Mesh Trucker', img: '/Pictures/hatvoting/images/hat2.jpeg', desc: 'Red front/bill, white trucker mesh, white rope, HS Bear woven patch, yellow BB side, Attack back.' },
+      { id: 'C', code: 'Option C', name: 'Clean Black "Attack Hockey" Snapback', img: '/Pictures/hatvoting/images/hat3.jpeg', desc: 'Clean black snapback (no rope), red eyelets, Attack Hockey bear front, HSOBB back.' },
+      { id: 'D', code: 'Option D', name: 'Clean Black Full-Logo Snapback', img: '/Pictures/hatvoting/images/hat4.jpeg', desc: 'Clean black snapback (no rope), red eyelets, full HSO Attack BB bear front, bear head back.' }
+    ];
+
+    var STORAGE_KEY = 'hso_attack_bb_cap_ballots_v2';
+    var ballots = [];
+    var lbIdx = 0;
+
+    try {
+      var saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) ballots = JSON.parse(saved);
+    } catch (e) {}
+
+    function saveBallots() {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(ballots)); } catch (e) {}
+    }
+
+    function syncSelects() {
+      var s1 = document.getElementById('rank1');
+      var s2 = document.getElementById('rank2');
+      var s3 = document.getElementById('rank3');
+      var chosen = [s1.value, s2.value, s3.value];
+
+      [s1, s2, s3].forEach(function(sel, idx) {
+        for (var i = 0; i < sel.options.length; i++) {
+          var opt = sel.options[i];
+          if (!opt.value) continue;
+          opt.disabled = chosen.some(function(val, cIdx) { return cIdx !== idx && val === opt.value; });
+        }
+      });
+
+      var btns = document.querySelectorAll('.qp-btn');
+      btns.forEach(function(btn) {
+        var parts = btn.getAttribute('data-pick').split('-');
+        var id = parts[0], rank = Number(parts[1]);
+        var active = chosen[rank - 1] === id;
+        btn.className = 'qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border transition ' + (
+          !active ? 'bg-[#0B0D10] text-gray-300 border-gray-700' :
+          rank === 1 ? 'bg-[#F5B82E] text-black border-[#F5B82E]' :
+          rank === 2 ? 'bg-gray-200 text-black border-gray-200' :
+          'bg-amber-600 text-white border-amber-500'
+        );
+      });
+    }
+
+    function quickPick(id, rank) {
+      var ids = ['rank1', 'rank2', 'rank3'];
+      ids.forEach(function(elId) {
+        var el = document.getElementById(elId);
+        if (el.value === id) el.value = '';
+      });
+      document.getElementById(ids[rank - 1]).value = id;
+      syncSelects();
+      document.getElementById('ballot-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function getStandings() {
+      var map = {};
+      CAPS.forEach(function(c) {
+        map[c.id] = { id: c.id, code: c.code, name: c.name, pts: 0, r1: 0, r2: 0, r3: 0 };
+      });
+      ballots.forEach(function(b) {
+        if (b.r1 && map[b.r1]) { map[b.r1].pts += 3; map[b.r1].r1++; }
+        if (b.r2 && map[b.r2]) { map[b.r2].pts += 2; map[b.r2].r2++; }
+        if (b.r3 && map[b.r3]) { map[b.r3].pts += 1; map[b.r3].r3++; }
+      });
+      return Object.values(map).sort(function(a, b) { return b.pts - a.pts || b.r1 - a.r1; });
+    }
+
+    function renderStandings() {
+      var ranked = getStandings();
+      var maxPts = Math.max(1, ranked[0].pts);
+      document.getElementById('statBallots').textContent = ballots.length;
+      document.getElementById('statLeader').textContent = (ballots.length === 0 || ranked[0].pts === 0)
+        ? 'No votes yet'
+        : ranked[0].code + ' (' + ranked[0].pts + ' pts)';
+
+      document.getElementById('standingsContainer').innerHTML = ranked.map(function(item, idx) {
+        var pct = ballots.length === 0 ? 0 : Math.round((item.pts / maxPts) * 100);
+        var top = idx === 0 && item.pts > 0;
+        return '<div class="p-3 rounded-xl bg-[#0B0D10] border ' + (top ? 'border-[#F5B82E]/50' : 'border-gray-800') + '">' +
+          '<div class="flex items-center justify-between text-xs mb-1.5">' +
+            '<div><span class="font-extrabold ' + (top ? 'text-[#F5B82E]' : 'text-gray-300') + '">' + item.code + '</span> <span class="text-gray-300">' + item.name + '</span></div>' +
+            '<div class="font-bold text-white">' + item.pts + ' <span class="text-gray-400 font-normal">pts</span></div>' +
+          '</div>' +
+          '<div class="w-full h-2.5 rounded-full bg-gray-800 overflow-hidden"><div class="h-full rounded-full bg-[#D9232E]" style="width:' + pct + '%"></div></div>' +
+          '<div class="mt-1.5 flex gap-3 text-[11px] text-gray-400"><span>🥇 ' + item.r1 + '</span><span>🥈 ' + item.r2 + '</span><span>🥉 ' + item.r3 + '</span></div>' +
+        '</div>';
+      }).join('');
+
+      var listEl = document.getElementById('ballotsList');
+      if (ballots.length === 0) {
+        listEl.innerHTML = '<div class="text-xs text-gray-500 italic py-3 text-center border border-dashed border-gray-800 rounded-xl">No ballots submitted yet.</div>';
+      } else {
+        listEl.innerHTML = ballots.slice().reverse().map(function(b) {
+          var picks = ['1st: Option ' + b.r1, b.r2 ? '2nd: Option ' + b.r2 : '', b.r3 ? '3rd: Option ' + b.r3 : ''].filter(Boolean).join(' • ');
+          return '<div class="p-3 rounded-xl bg-[#0B0D10] border border-gray-800/90 text-xs space-y-1">' +
+            '<div class="flex items-center justify-between"><span class="font-bold text-white">' + b.name.replace(/</g, '&lt;') + '</span><span class="text-[11px] text-[#F5B82E] font-semibold">' + picks + '</span></div>' +
+            (b.note ? '<p class="text-gray-400 italic">"' + b.note.replace(/</g, '&lt;') + '"</p>' : '') +
+          '</div>';
+        }).join('');
+      }
+    }
+
+    document.getElementById('ballotForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var name = document.getElementById('coachName').value.trim();
+      var r1 = document.getElementById('rank1').value;
+      var r2 = document.getElementById('rank2').value;
+      var r3 = document.getElementById('rank3').value;
+      var note = document.getElementById('coachNote').value.trim();
+      var alertBox = document.getElementById('formAlert');
+
+      if (!name || !r1) return;
+
+      var idx = ballots.findIndex(function(b) { return b.name.toLowerCase() === name.toLowerCase(); });
+      var entry = { name: name, r1: r1, r2: r2, r3: r3, note: note };
+      if (idx >= 0) ballots[idx] = entry; else ballots.push(entry);
+
+      saveBallots();
+      renderStandings();
+      alertBox.textContent = 'Ballot recorded for ' + name + '! Click "Copy Summary" at the top to share in the group chat.';
+      alertBox.className = 'text-xs px-3.5 py-2.5 rounded-lg bg-emerald-500/15 text-emerald-300 border border-emerald-500/30';
+      document.getElementById('coachNote').value = '';
+    });
+
+    function resetDeviceBallots() {
+      if (!confirm('Clear saved ballots from this browser?')) return;
+      ballots = [];
+      saveBallots();
+      renderStandings();
+    }
+
+    function copySummary() {
+      var btnText = document.getElementById('copyBtnText');
+      var lines = ['🏒 HSO Attack BB — Coaches Cap Vote'];
+      if (ballots.length === 0) {
+        var r1 = document.getElementById('rank1').value;
+        var r2 = document.getElementById('rank2').value;
+        var r3 = document.getElementById('rank3').value;
+        var name = document.getElementById('coachName').value.trim() || 'My Picks';
+        lines.push(r1 ? (name + ': 1st = Option ' + r1 + (r2 ? ', 2nd = Option ' + r2 : '') + (r3 ? ', 3rd = Option ' + r3 : '')) : ('Vote here: ' + window.location.href));
+      } else {
+        getStandings().forEach(function(r, i) {
+          lines.push((i + 1) + '. ' + r.code + ' (' + r.name + ') — ' + r.pts + ' pts');
+        });
+        ballots.forEach(function(b) {
+          lines.push('• ' + b.name + ': 1st=' + b.r1 + (b.r2 ? ', 2nd=' + b.r2 : '') + (b.r3 ? ', 3rd=' + b.r3 : '') + (b.note ? ' ("' + b.note + '")' : ''));
+        });
+      }
+      navigator.clipboard.writeText(lines.join('\n')).then(function() {
+        btnText.textContent = 'Copied!';
+        setTimeout(function() { btnText.textContent = 'Copy Summary'; }, 2000);
+      });
+    }
+
+    function openLightbox(i) {
+      lbIdx = i;
+      var c = CAPS[i];
+      var img = document.getElementById('lbImage');
+      img.classList.remove('zoomed');
+      img.src = c.img;
+      document.getElementById('lbTag').textContent = c.code;
+      document.getElementById('lbTitle').textContent = c.name;
+      document.getElementById('lbDesc').textContent = c.desc;
+      document.getElementById('zoomBtn').textContent = '🔍 Zoom (1.85x)';
+      document.getElementById('lightbox').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+      document.getElementById('lbImage').classList.remove('zoomed');
+      document.body.style.overflow = '';
+    }
+
+    function stepLightbox(d) {
+      openLightbox((lbIdx + d + CAPS.length) % CAPS.length);
+    }
+
+    function toggleZoom() {
+      var z = document.getElementById('lbImage').classList.toggle('zoomed');
+      document.getElementById('zoomBtn').textContent = z ? '🔍 Reset Zoom' : '🔍 Zoom (1.85x)';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (document.getElementById('lightbox').classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') stepLightbox(1);
+      if (e.key === 'ArrowLeft') stepLightbox(-1);
+    });
+
+    renderStandings();
+  </script>
+</body>
+</html>
