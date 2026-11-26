@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HSO Attack BB — Vintage Toque Lookbook &amp; Ranked Ballot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&family=Inter:wght@400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #0B0D10;
+      color: #F3F4F6;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .font-display {
+      font-family: 'Barlow Condensed', sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    .ice-grid {
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(217, 35, 46, 0.14), transparent 55%),
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 100% 100%, 36px 36px, 36px 36px;
+    }
+
+    .toque-card {
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .toque-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(245, 184, 46, 0.45);
+      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7);
+    }
+
+    .lightbox-img {
+      transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .lightbox-img.zoomed {
+      transform: scale(1.85);
+      cursor: zoom-out;
+    }
+  </style>
+</head>
+<body class="ice-grid min-h-screen flex flex-col">
+
+  <!-- Top Header -->
+  <header class="sticky top-0 z-30 border-b border-gray-800/90 bg-[#0B0D10]/90 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#D9232E] to-[#99151E] flex items-center justify-center font-display font-extrabold text-white text-xl shadow-lg shadow-red-950/50 border border-red-400/30">
+          HSO
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="font-display text-2xl sm:text-3xl font-extrabold uppercase tracking-wide text-white leading-none">
+              HSO Attack <span class="text-[#F5B82E]">BB</span>
+            </h1>
+            <span class="hidden sm:inline-block text-[11px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-red-500/15 text-red-300 border border-red-500/30">
+              Vintage Toque Vote
+            </span>
+          </div>
+          <p class="text-xs text-gray-400 mt-0.5">Hockey Sud-Ouest • Retro Knit Pom-Pom Toque Mockups</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="#ballot-section" class="px-3.5 py-2 rounded-lg bg-[#D9232E] hover:bg-[#b91c26] text-white text-xs sm:text-sm font-semibold transition shadow-md shadow-red-950/40">
+          Cast Ballot ↓
+        </a>
+        <button type="button" onclick="copySummary()" id="copyBtn" class="px-3 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs sm:text-sm font-medium border border-gray-700 transition flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-[#F5B82E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+          </svg>
+          <span id="copyBtnText">Copy Summary</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full space-y-10">
+
+    <!-- Intro Banner -->
+    <section class="rounded-2xl bg-[#14181F] border border-gray-800 p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="space-y-1.5 max-w-2xl">
+        <h2 class="text-lg sm:text-xl font-bold text-white">Compare the 5 Vintage Toque Concepts</h2>
+        <p class="text-sm text-gray-300 leading-relaxed">
+          Tap any mockup to zoom in on the knit stripes, crossed sticks, pucks, and bear cuff patch. Rank your <strong class="text-[#F5B82E]">1st (3 pts)</strong>, <strong class="text-gray-200">2nd (2 pts)</strong>, and <strong class="text-amber-600">3rd (1 pt)</strong> choices below—or use the quick-rank buttons on each card.
+        </p>
+      </div>
+      <div class="flex items-center gap-3 shrink-0 bg-black/35 px-4 py-3 rounded-xl border border-gray-800/80">
+        <div class="text-center">
+          <div id="statBallots" class="font-display text-2xl font-extrabold text-white">0</div>
+          <div class="text-[11px] uppercase tracking-wider text-gray-400">Ballots</div>
+        </div>
+        <div class="h-8 w-px bg-gray-800"></div>
+        <div class="text-left">
+          <div class="text-[11px] uppercase tracking-wider text-gray-400">Current Leader</div>
+          <div id="statLeader" class="text-sm font-bold text-[#F5B82E]">No votes yet</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 Toque Cards Grid -->
+    <section aria-label="Toque Options">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Option 1 -->
+        <article class="toque-card rounded-2xl bg-[#14181F] border border-gray-800 overflow-hidden flex flex-col">
+          <div class="relative group bg-black cursor-zoom-in overflow-hidden aspect-[16/10]" onclick="openLightbox(0)">
+            <img src="Toque1.jpg" alt="Option 1: Cream Crossed Sticks &amp; Snowflakes" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300" />
+            <div class="absolute top-3 left-3 flex items-center gap-1.5">
+              <span class="px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-sm text-xs font-extrabold uppercase tracking-wider text-[#F5B82E] border border-yellow-500/30">Option 1</span>
+              <span class="px-2 py-1 rounded-lg bg-black/70 backdrop-blur-sm text-[11px] font-medium text-gray-200 border border-white/10">Cream Base</span>
+            </div>
+            <button type="button" onclick="event.stopPropagation(); openLightbox(0)" class="absolute bottom-3 right-3 px-2.5 py-1.5 rounded-lg bg-black/80 hover:bg-[#D9232E] text-white text-xs font-semibold border border-white/15 backdrop-blur-sm transition">
+              🔍 Inspect
+            </button>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="font-display text-2xl font-extrabold uppercase text-white tracking-wide">Cream Crossed Sticks &amp; Snowflakes</h3>
+              <ul class="mt-2.5 space-y-1.5 text-xs text-gray-300">
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Crown: Vintage cream knit with black band reading "ATTACK" front &amp; "HSO" back</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Accent Band: Gold &amp; red-orange crossed hockey sticks with red snowflakes below</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Cuff &amp; Pom: Ribbed cream cuff with centered bear logo; speckled multi-color pom</span></li>
+              </ul>
+            </div>
+            <div class="pt-3 border-t border-gray-800/90 flex items-center justify-between gap-2">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-gray-400">Quick Rank:</span>
+              <div class="flex items-center gap-1.5">
+                <button type="button" data-pick="1-1" onclick="quickPick('1', 1)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-[#F5B82E]">1st</button>
+                <button type="button" data-pick="1-2" onclick="quickPick('1', 2)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-gray-300">2nd</button>
+                <button type="button" data-pick="1-3" onclick="quickPick('1', 3)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-amber-500">3rd</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Option 2 -->
+        <article class="toque-card rounded-2xl bg-[#14181F] border border-gray-800 overflow-hidden flex flex-col">
+          <div class="relative group bg-black cursor-zoom-in overflow-hidden aspect-[16/10]" onclick="openLightbox(1)">
+            <img src="Toque2.jpg" alt="Option 2: Text A, Colour C (Palette 4)" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300" />
+            <div class="absolute top-3 left-3 flex items-center gap-1.5">
+              <span class="px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-sm text-xs font-extrabold uppercase tracking-wider text-[#F5B82E] border border-yellow-500/30">Option 2</span>
+              <span class="px-2 py-1 rounded-lg bg-black/70 backdrop-blur-sm text-[11px] font-medium text-gray-200 border border-white/10">Text A • Colour C</span>
+            </div>
+            <button type="button" onclick="event.stopPropagation(); openLightbox(1)" class="absolute bottom-3 right-3 px-2.5 py-1.5 rounded-lg bg-black/80 hover:bg-[#D9232E] text-white text-xs font-semibold border border-white/15 backdrop-blur-sm transition">
+              🔍 Inspect
+            </button>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="font-display text-2xl font-extrabold uppercase text-white tracking-wide">Black Zigzag "Sud-Ouest / Hockey" (Text A, Colour C)</h3>
+              <ul class="mt-2.5 space-y-1.5 text-xs text-gray-300">
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Crown: Black knit with red-orange band reading "SUD-OUEST" front &amp; "HOCKEY" back</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Band &amp; Borders: Crossed sticks with small pucks inside; gold Fair Isle zigzag borders</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Cuff &amp; Pom: Ribbed black cuff with centered bear patch; speckled multi-color pom</span></li>
+              </ul>
+            </div>
+            <div class="pt-3 border-t border-gray-800/90 flex items-center justify-between gap-2">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-gray-400">Quick Rank:</span>
+              <div class="flex items-center gap-1.5">
+                <button type="button" data-pick="2-1" onclick="quickPick('2', 1)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-[#F5B82E]">1st</button>
+                <button type="button" data-pick="2-2" onclick="quickPick('2', 2)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-gray-300">2nd</button>
+                <button type="button" data-pick="2-3" onclick="quickPick('2', 3)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-amber-500">3rd</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Option 3 -->
+        <article class="toque-card rounded-2xl bg-[#14181F] border border-gray-800 overflow-hidden flex flex-col">
+          <div class="relative group bg-black cursor-zoom-in overflow-hidden aspect-[16/10]" onclick="openLightbox(2)">
+            <img src="Toque3.jpg" alt="Option 3: Text A, Colour A (Palette 3)" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300" />
+            <div class="absolute top-3 left-3 flex items-center gap-1.5">
+              <span class="px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-sm text-xs font-extrabold uppercase tracking-wider text-[#F5B82E] border border-yellow-500/30">Option 3</span>
+              <span class="px-2 py-1 rounded-lg bg-black/70 backdrop-blur-sm text-[11px] font-medium text-gray-200 border border-white/10">Text A • Colour A</span>
+            </div>
+            <button type="button" onclick="event.stopPropagation(); openLightbox(2)" class="absolute bottom-3 right-3 px-2.5 py-1.5 rounded-lg bg-black/80 hover:bg-[#D9232E] text-white text-xs font-semibold border border-white/15 backdrop-blur-sm transition">
+              🔍 Inspect
+            </button>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="font-display text-2xl font-extrabold uppercase text-white tracking-wide">Black '70s Stripe "Sud-Ouest / Hockey" (Text A, Colour A)</h3>
+              <ul class="mt-2.5 space-y-1.5 text-xs text-gray-300">
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Crown: Black knit with cream "SUD-OUEST" front &amp; "HOCKEY" back</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Band &amp; Borders: Crossed sticks &amp; small pucks; '70s red-orange and gold stripe borders</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Cuff &amp; Pom: Ribbed black cuff with centered bear patch; black &amp; gold flecked pom</span></li>
+              </ul>
+            </div>
+            <div class="pt-3 border-t border-gray-800/90 flex items-center justify-between gap-2">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-gray-400">Quick Rank:</span>
+              <div class="flex items-center gap-1.5">
+                <button type="button" data-pick="3-1" onclick="quickPick('3', 1)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-[#F5B82E]">1st</button>
+                <button type="button" data-pick="3-2" onclick="quickPick('3', 2)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-gray-300">2nd</button>
+                <button type="button" data-pick="3-3" onclick="quickPick('3', 3)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-amber-500">3rd</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Option 4 -->
+        <article class="toque-card rounded-2xl bg-[#14181F] border border-gray-800 overflow-hidden flex flex-col">
+          <div class="relative group bg-black cursor-zoom-in overflow-hidden aspect-[16/10]" onclick="openLightbox(3)">
+            <img src="Toque4.jpg" alt="Option 4: Cream Banded ATTACK / HSO" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300" />
+            <div class="absolute top-3 left-3 flex items-center gap-1.5">
+              <span class="px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-sm text-xs font-extrabold uppercase tracking-wider text-[#F5B82E] border border-yellow-500/30">Option 4</span>
+              <span class="px-2 py-1 rounded-lg bg-black/70 backdrop-blur-sm text-[11px] font-medium text-gray-200 border border-white/10">Cream &amp; Black Band</span>
+            </div>
+            <button type="button" onclick="event.stopPropagation(); openLightbox(3)" class="absolute bottom-3 right-3 px-2.5 py-1.5 rounded-lg bg-black/80 hover:bg-[#D9232E] text-white text-xs font-semibold border border-white/15 backdrop-blur-sm transition">
+              🔍 Inspect
+            </button>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="font-display text-2xl font-extrabold uppercase text-white tracking-wide">Cream Banded "Attack / HSO" with Sticks</h3>
+              <ul class="mt-2.5 space-y-1.5 text-xs text-gray-300">
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Crown: Vintage cream knit with black band reading "ATTACK" front &amp; "HSO" back</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Band &amp; Borders: White crossed hockey sticks flanking text; red-orange Fair Isle zigzags</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Cuff &amp; Pom: Ribbed cream cuff with centered bear logo; speckled multi-color pom</span></li>
+              </ul>
+            </div>
+            <div class="pt-3 border-t border-gray-800/90 flex items-center justify-between gap-2">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-gray-400">Quick Rank:</span>
+              <div class="flex items-center gap-1.5">
+                <button type="button" data-pick="4-1" onclick="quickPick('4', 1)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-[#F5B82E]">1st</button>
+                <button type="button" data-pick="4-2" onclick="quickPick('4', 2)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-gray-300">2nd</button>
+                <button type="button" data-pick="4-3" onclick="quickPick('4', 3)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-amber-500">3rd</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Option 5 (spans 2 columns on desktop) -->
+        <article class="toque-card md:col-span-2 rounded-2xl bg-[#14181F] border border-gray-800 overflow-hidden flex flex-col md:flex-row">
+          <div class="relative group bg-black cursor-zoom-in overflow-hidden aspect-[16/10] md:aspect-auto md:w-1/2" onclick="openLightbox(4)">
+            <img src="Toque5.jpg" alt="Option 5: Cream Banded SUD-OUEST / HOCKEY" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300" />
+            <div class="absolute top-3 left-3 flex items-center gap-1.5">
+              <span class="px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-sm text-xs font-extrabold uppercase tracking-wider text-[#F5B82E] border border-yellow-500/30">Option 5</span>
+              <span class="px-2 py-1 rounded-lg bg-black/70 backdrop-blur-sm text-[11px] font-medium text-gray-200 border border-white/10">Cream • Sud-Ouest</span>
+            </div>
+            <button type="button" onclick="event.stopPropagation(); openLightbox(4)" class="absolute bottom-3 right-3 px-2.5 py-1.5 rounded-lg bg-black/80 hover:bg-[#D9232E] text-white text-xs font-semibold border border-white/15 backdrop-blur-sm transition">
+              🔍 Inspect
+            </button>
+          </div>
+          <div class="p-5 sm:p-6 md:w-1/2 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="font-display text-2xl font-extrabold uppercase text-white tracking-wide">Cream Banded "Sud-Ouest / Hockey" with Sticks &amp; Snowflakes</h3>
+              <ul class="mt-2.5 space-y-1.5 text-xs text-gray-300">
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Crown: Vintage cream knit with black band reading "SUD-OUEST" front &amp; "HOCKEY" back</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Band &amp; Borders: White crossed sticks &amp; red snowflake accents; red-orange Fair Isle zigzags</span></li>
+                <li class="flex items-start gap-2"><span class="text-[#D9232E] font-bold">•</span><span>Cuff &amp; Pom: Ribbed cream cuff with centered bear logo; speckled multi-color pom</span></li>
+              </ul>
+            </div>
+            <div class="pt-3 border-t border-gray-800/90 flex items-center justify-between gap-2">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-gray-400">Quick Rank:</span>
+              <div class="flex items-center gap-1.5">
+                <button type="button" data-pick="5-1" onclick="quickPick('5', 1)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-[#F5B82E]">1st</button>
+                <button type="button" data-pick="5-2" onclick="quickPick('5', 2)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-gray-300">2nd</button>
+                <button type="button" data-pick="5-3" onclick="quickPick('5', 3)" class="qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border bg-[#0B0D10] text-gray-300 border-gray-700 hover:border-amber-500">3rd</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Ballot & Live Standings Split Section -->
+    <section id="ballot-section" class="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-2">
+
+      <!-- Ranked Ballot Form -->
+      <div class="lg:col-span-6 rounded-2xl bg-[#14181F] border border-gray-800 p-5 sm:p-6 space-y-5">
+        <div class="border-b border-gray-800 pb-4">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#D9232E]">Step 2 • Submit Your Picks</span>
+          <h2 class="font-display text-2xl font-extrabold uppercase text-white mt-0.5">Coaches Ranked Toque Ballot</h2>
+          <p class="text-xs text-gray-400 mt-1">Points system: 1st Place = 3 pts • 2nd Place = 2 pts • 3rd Place = 1 pt</p>
+        </div>
+
+        <form id="ballotForm" class="space-y-4">
+          <div>
+            <label for="coachName" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5">
+              Coach Name <span class="text-red-400">*</span>
+            </label>
+            <input type="text" id="coachName" required placeholder="e.g., Coach Marc / James" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0B0D10] border border-gray-700 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#F5B82E]" />
+          </div>
+
+          <div class="grid grid-cols-1 gap-3">
+            <div class="p-3 rounded-xl bg-[#0B0D10] border border-gray-800">
+              <label for="rank1" class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#F5B82E] mb-1.5">
+                <span>🥇 1st Choice (3 Points)</span>
+                <span class="text-[11px] font-normal text-gray-400">Required</span>
+              </label>
+              <select id="rank1" required onchange="syncSelects()" class="w-full px-3 py-2 rounded-lg bg-[#14181F] border border-gray-700 text-sm text-white focus:outline-none focus:border-[#F5B82E]">
+                <option value="">Select your top choice...</option>
+                <option value="1">Option 1 — Cream Crossed Sticks &amp; Snowflakes</option>
+                <option value="2">Option 2 — Black Zigzag "Sud-Ouest / Hockey" (Text A, Colour C)</option>
+                <option value="3">Option 3 — Black '70s Stripe "Sud-Ouest / Hockey" (Text A, Colour A)</option>
+                <option value="4">Option 4 — Cream Banded "Attack / HSO" with Sticks</option>
+                <option value="5">Option 5 — Cream Banded "Sud-Ouest / Hockey" with Sticks &amp; Snowflakes</option>
+              </select>
+            </div>
+
+            <div class="p-3 rounded-xl bg-[#0B0D10] border border-gray-800">
+              <label for="rank2" class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-gray-200 mb-1.5">
+                <span>🥈 2nd Choice (2 Points)</span>
+                <span class="text-[11px] font-normal text-gray-400">Optional</span>
+              </label>
+              <select id="rank2" onchange="syncSelects()" class="w-full px-3 py-2 rounded-lg bg-[#14181F] border border-gray-700 text-sm text-white focus:outline-none focus:border-[#F5B82E]">
+                <option value="">Select runner-up...</option>
+                <option value="1">Option 1 — Cream Crossed Sticks &amp; Snowflakes</option>
+                <option value="2">Option 2 — Black Zigzag "Sud-Ouest / Hockey" (Text A, Colour C)</option>
+                <option value="3">Option 3 — Black '70s Stripe "Sud-Ouest / Hockey" (Text A, Colour A)</option>
+                <option value="4">Option 4 — Cream Banded "Attack / HSO" with Sticks</option>
+                <option value="5">Option 5 — Cream Banded "Sud-Ouest / Hockey" with Sticks &amp; Snowflakes</option>
+              </select>
+            </div>
+
+            <div class="p-3 rounded-xl bg-[#0B0D10] border border-gray-800">
+              <label for="rank3" class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-amber-500 mb-1.5">
+                <span>🥉 3rd Choice (1 Point)</span>
+                <span class="text-[11px] font-normal text-gray-400">Optional</span>
+              </label>
+              <select id="rank3" onchange="syncSelects()" class="w-full px-3 py-2 rounded-lg bg-[#14181F] border border-gray-700 text-sm text-white focus:outline-none focus:border-[#F5B82E]">
+                <option value="">Select 3rd choice...</option>
+                <option value="1">Option 1 — Cream Crossed Sticks &amp; Snowflakes</option>
+                <option value="2">Option 2 — Black Zigzag "Sud-Ouest / Hockey" (Text A, Colour C)</option>
+                <option value="3">Option 3 — Black '70s Stripe "Sud-Ouest / Hockey" (Text A, Colour A)</option>
+                <option value="4">Option 4 — Cream Banded "Attack / HSO" with Sticks</option>
+                <option value="5">Option 5 — Cream Banded "Sud-Ouest / Hockey" with Sticks &amp; Snowflakes</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="coachNote" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5">
+              Notes / Tweaks (Optional)
+            </label>
+            <textarea id="coachNote" rows="2" placeholder="e.g., Love the '70s stripes on Option 3, or prefer the cream cuff..." class="w-full px-3.5 py-2 rounded-xl bg-[#0B0D10] border border-gray-700 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#F5B82E]"></textarea>
+          </div>
+
+          <div id="formAlert" class="hidden text-xs px-3.5 py-2.5 rounded-lg"></div>
+
+          <button type="submit" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-[#D9232E] to-[#b51923] hover:from-[#e42935] hover:to-[#c81d28] text-white font-bold text-sm uppercase tracking-wider shadow-lg shadow-red-950/50 transition cursor-pointer">
+            Submit Coach Vote
+          </button>
+        </form>
+      </div>
+
+      <!-- Live Standings & Ballots Log -->
+      <div class="lg:col-span-6 rounded-2xl bg-[#14181F] border border-gray-800 p-5 sm:p-6 flex flex-col justify-between space-y-6">
+        <div class="space-y-5">
+          <div class="flex items-center justify-between border-b border-gray-800 pb-4">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-[#F5B82E]">Live Tally</span>
+              <h2 class="font-display text-2xl font-extrabold uppercase text-white mt-0.5">Standings &amp; Feedback</h2>
+            </div>
+            <button type="button" onclick="resetDeviceBallots()" class="text-[11px] text-gray-500 hover:text-red-400 underline transition">
+              Reset My Browser Votes
+            </button>
+          </div>
+
+          <div id="standingsContainer" class="space-y-3.5">
+            <div class="text-xs text-gray-400">Submit a ballot on the left to update the live point totals.</div>
+          </div>
+
+          <div class="pt-2 space-y-2.5">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-gray-400">Submitted Ballots</h3>
+            <div id="ballotsList" class="space-y-2 max-h-64 overflow-y-auto pr-1">
+              <div class="text-xs text-gray-500 italic py-3 text-center border border-dashed border-gray-800 rounded-xl">No ballots submitted yet.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-black/40 border border-gray-800/90 p-3.5 text-xs text-gray-400">
+          Each coach’s picks save directly on their device. Click <strong class="text-gray-200">Copy Summary</strong> at the top to paste your ranked ballot straight into the coaches group chat!
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-800/80 py-5 text-center text-xs text-gray-500">
+    Hockey Sud-Ouest • HSO Attack BB Vintage Toque Mockups
+  </footer>
+
+  <!-- Full-Screen Zoom Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md flex flex-col">
+    <div class="flex items-center justify-between px-4 sm:px-6 py-3.5 border-b border-gray-800">
+      <div>
+        <span id="lbTag" class="text-xs font-bold uppercase tracking-wider text-[#F5B82E]">Option 1</span>
+        <h3 id="lbTitle" class="text-base sm:text-lg font-bold text-white">Title</h3>
+      </div>
+      <div class="flex items-center gap-2">
+        <button type="button" onclick="toggleZoom()" id="zoomBtn" class="px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs font-semibold text-white border border-gray-700">
+          🔍 Zoom (1.85x)
+        </button>
+        <button type="button" onclick="closeLightbox()" class="p-2 rounded-lg bg-gray-800 hover:bg-red-600 text-white transition" aria-label="Close">
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <div class="flex-1 relative overflow-auto flex items-center justify-center p-4 select-none" onclick="if(event.target===this) closeLightbox()">
+      <button type="button" onclick="stepLightbox(-1)" class="absolute left-3 sm:left-6 z-10 px-3.5 py-2.5 rounded-full bg-black/70 hover:bg-[#D9232E] text-white border border-gray-700 transition" aria-label="Previous">◀</button>
+      <img id="lbImage" src="" alt="Toque Mockup" onclick="toggleZoom()" class="lightbox-img max-h-[76vh] max-w-full rounded-xl shadow-2xl cursor-zoom-in object-contain" />
+      <button type="button" onclick="stepLightbox(1)" class="absolute right-3 sm:right-6 z-10 px-3.5 py-2.5 rounded-full bg-black/70 hover:bg-[#D9232E] text-white border border-gray-700 transition" aria-label="Next">▶</button>
+    </div>
+
+    <div class="px-4 py-3 border-t border-gray-800 text-center text-xs text-gray-400">
+      <span id="lbDesc">Specs</span> • <span class="text-gray-500">Click image to toggle zoom • Use ← / → arrow keys</span>
+    </div>
+  </div>
+
+  <script>
+    var TOQUES = [
+      { id: '1', code: 'Option 1', name: 'Cream Crossed Sticks & Snowflakes', img: 'Toque1.jpg', desc: 'Cream knit, black band ("ATTACK" / "HSO"), crossed sticks & red snowflakes above cuff, bear logo on ribbed cuff.' },
+      { id: '2', code: 'Option 2', name: 'Black Zigzag "Sud-Ouest / Hockey" (Text A, Colour C)', img: 'Toque2.jpg', desc: 'Black knit, red-orange band ("SUD-OUEST" / "HOCKEY") with crossed sticks & small pucks, gold zigzag borders.' },
+      { id: '3', code: 'Option 3', name: 'Black \'70s Stripe "Sud-Ouest / Hockey" (Text A, Colour A)', img: 'Toque3.jpg', desc: 'Black knit, cream "SUD-OUEST" / "HOCKEY" with crossed sticks & small pucks, \'70s red-orange & gold stripe borders.' },
+      { id: '4', code: 'Option 4', name: 'Cream Banded "Attack / HSO" with Sticks', img: 'Toque4.jpg', desc: 'Cream knit, black band ("ATTACK" / "HSO") flanked by white crossed sticks, red-orange zigzag borders, bear cuff logo.' },
+      { id: '5', code: 'Option 5', name: 'Cream Banded "Sud-Ouest / Hockey" with Sticks & Snowflakes', img: 'Toque5.jpg', desc: 'Cream knit, black band ("SUD-OUEST" / "HOCKEY") with crossed sticks & red snowflake accents, red-orange zigzags.' }
+    ];
+
+    var STORAGE_KEY = 'hso_attack_bb_toque_ballots_v1';
+    var ballots = [];
+    var lbIdx = 0;
+
+    try {
+      var saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) ballots = JSON.parse(saved);
+    } catch (e) {}
+
+    function saveBallots() {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(ballots)); } catch (e) {}
+    }
+
+    function syncSelects() {
+      var s1 = document.getElementById('rank1');
+      var s2 = document.getElementById('rank2');
+      var s3 = document.getElementById('rank3');
+      var chosen = [s1.value, s2.value, s3.value];
+
+      [s1, s2, s3].forEach(function(sel, idx) {
+        for (var i = 0; i < sel.options.length; i++) {
+          var opt = sel.options[i];
+          if (!opt.value) continue;
+          opt.disabled = chosen.some(function(val, cIdx) { return cIdx !== idx && val === opt.value; });
+        }
+      });
+
+      var btns = document.querySelectorAll('.qp-btn');
+      btns.forEach(function(btn) {
+        var parts = btn.getAttribute('data-pick').split('-');
+        var id = parts[0], rank = Number(parts[1]);
+        var active = chosen[rank - 1] === id;
+        btn.className = 'qp-btn px-2.5 py-1 rounded-lg text-xs font-bold border transition ' + (
+          !active ? 'bg-[#0B0D10] text-gray-300 border-gray-700' :
+          rank === 1 ? 'bg-[#F5B82E] text-black border-[#F5B82E]' :
+          rank === 2 ? 'bg-gray-200 text-black border-gray-200' :
+          'bg-amber-600 text-white border-amber-500'
+        );
+      });
+    }
+
+    function quickPick(id, rank) {
+      var ids = ['rank1', 'rank2', 'rank3'];
+      ids.forEach(function(elId) {
+        var el = document.getElementById(elId);
+        if (el.value === id) el.value = '';
+      });
+      document.getElementById(ids[rank - 1]).value = id;
+      syncSelects();
+      document.getElementById('ballot-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function getStandings() {
+      var map = {};
+      TOQUES.forEach(function(t) {
+        map[t.id] = { id: t.id, code: t.code, name: t.name, pts: 0, r1: 0, r2: 0, r3: 0 };
+      });
+      ballots.forEach(function(b) {
+        if (b.r1 && map[b.r1]) { map[b.r1].pts += 3; map[b.r1].r1++; }
+        if (b.r2 && map[b.r2]) { map[b.r2].pts += 2; map[b.r2].r2++; }
+        if (b.r3 && map[b.r3]) { map[b.r3].pts += 1; map[b.r3].r3++; }
+      });
+      return Object.values(map).sort(function(a, b) { return b.pts - a.pts || b.r1 - a.r1; });
+    }
+
+    function renderStandings() {
+      var ranked = getStandings();
+      var maxPts = Math.max(1, ranked[0].pts);
+      document.getElementById('statBallots').textContent = ballots.length;
+      document.getElementById('statLeader').textContent = (ballots.length === 0 || ranked[0].pts === 0)
+        ? 'No votes yet'
+        : ranked[0].code + ' (' + ranked[0].pts + ' pts)';
+
+      document.getElementById('standingsContainer').innerHTML = ranked.map(function(item, idx) {
+        var pct = ballots.length === 0 ? 0 : Math.round((item.pts / maxPts) * 100);
+        var top = idx === 0 && item.pts > 0;
+        return '<div class="p-3 rounded-xl bg-[#0B0D10] border ' + (top ? 'border-[#F5B82E]/50' : 'border-gray-800') + '">' +
+          '<div class="flex items-center justify-between text-xs mb-1.5">' +
+            '<div><span class="font-extrabold ' + (top ? 'text-[#F5B82E]' : 'text-gray-300') + '">' + item.code + '</span> <span class="text-gray-300">' + item.name + '</span></div>' +
+            '<div class="font-bold text-white">' + item.pts + ' <span class="text-gray-400 font-normal">pts</span></div>' +
+          '</div>' +
+          '<div class="w-full h-2.5 rounded-full bg-gray-800 overflow-hidden"><div class="h-full rounded-full bg-[#D9232E]" style="width:' + pct + '%"></div></div>' +
+          '<div class="mt-1.5 flex gap-3 text-[11px] text-gray-400"><span>🥇 ' + item.r1 + '</span><span>🥈 ' + item.r2 + '</span><span>🥉 ' + item.r3 + '</span></div>' +
+        '</div>';
+      }).join('');
+
+      var listEl = document.getElementById('ballotsList');
+      if (ballots.length === 0) {
+        listEl.innerHTML = '<div class="text-xs text-gray-500 italic py-3 text-center border border-dashed border-gray-800 rounded-xl">No ballots submitted yet.</div>';
+      } else {
+        listEl.innerHTML = ballots.slice().reverse().map(function(b) {
+          var picks = ['1st: Option ' + b.r1, b.r2 ? '2nd: Option ' + b.r2 : '', b.r3 ? '3rd: Option ' + b.r3 : ''].filter(Boolean).join(' • ');
+          return '<div class="p-3 rounded-xl bg-[#0B0D10] border border-gray-800/90 text-xs space-y-1">' +
+            '<div class="flex items-center justify-between"><span class="font-bold text-white">' + b.name.replace(/</g, '&lt;') + '</span><span class="text-[11px] text-[#F5B82E] font-semibold">' + picks + '</span></div>' +
+            (b.note ? '<p class="text-gray-400 italic">"' + b.note.replace(/</g, '&lt;') + '"</p>' : '') +
+          '</div>';
+        }).join('');
+      }
+    }
+
+    document.getElementById('ballotForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var name = document.getElementById('coachName').value.trim();
+      var r1 = document.getElementById('rank1').value;
+      var r2 = document.getElementById('rank2').value;
+      var r3 = document.getElementById('rank3').value;
+      var note = document.getElementById('coachNote').value.trim();
+      var alertBox = document.getElementById('formAlert');
+
+      if (!name || !r1) return;
+
+      var idx = ballots.findIndex(function(b) { return b.name.toLowerCase() === name.toLowerCase(); });
+      var entry = { name: name, r1: r1, r2: r2, r3: r3, note: note };
+      if (idx >= 0) ballots[idx] = entry; else ballots.push(entry);
+
+      saveBallots();
+      renderStandings();
+      alertBox.textContent = 'Ballot recorded for ' + name + '! Click "Copy Summary" at the top to share in the group chat.';
+      alertBox.className = 'text-xs px-3.5 py-2.5 rounded-lg bg-emerald-500/15 text-emerald-300 border border-emerald-500/30';
+      document.getElementById('coachNote').value = '';
+    });
+
+    function resetDeviceBallots() {
+      if (!confirm('Clear saved toque ballots from this browser?')) return;
+      ballots = [];
+      saveBallots();
+      renderStandings();
+    }
+
+    function copySummary() {
+      var btnText = document.getElementById('copyBtnText');
+      var lines = ['🏒 HSO Attack BB — Vintage Toque Vote'];
+      if (ballots.length === 0) {
+        var r1 = document.getElementById('rank1').value;
+        var r2 = document.getElementById('rank2').value;
+        var r3 = document.getElementById('rank3').value;
+        var name = document.getElementById('coachName').value.trim() || 'My Picks';
+        lines.push(r1 ? (name + ': 1st = Option ' + r1 + (r2 ? ', 2nd = Option ' + r2 : '') + (r3 ? ', 3rd = Option ' + r3 : '')) : ('Vote here: ' + window.location.href));
+      } else {
+        getStandings().forEach(function(r, i) {
+          lines.push((i + 1) + '. ' + r.code + ' (' + r.name + ') — ' + r.pts + ' pts');
+        });
+        ballots.forEach(function(b) {
+          lines.push('• ' + b.name + ': 1st=' + b.r1 + (b.r2 ? ', 2nd=' + b.r2 : '') + (b.r3 ? ', 3rd=' + b.r3 : '') + (b.note ? ' ("' + b.note + '")' : ''));
+        });
+      }
+      navigator.clipboard.writeText(lines.join('\n')).then(function() {
+        btnText.textContent = 'Copied!';
+        setTimeout(function() { btnText.textContent = 'Copy Summary'; }, 2000);
+      });
+    }
+
+    function openLightbox(i) {
+      lbIdx = i;
+      var t = TOQUES[i];
+      var img = document.getElementById('lbImage');
+      img.classList.remove('zoomed');
+      img.src = t.img;
+      document.getElementById('lbTag').textContent = t.code;
+      document.getElementById('lbTitle').textContent = t.name;
+      document.getElementById('lbDesc').textContent = t.desc;
+      document.getElementById('zoomBtn').textContent = '🔍 Zoom (1.85x)';
+      document.getElementById('lightbox').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+      document.getElementById('lbImage').classList.remove('zoomed');
+      document.body.style.overflow = '';
+    }
+
+    function stepLightbox(d) {
+      openLightbox((lbIdx + d + TOQUES.length) % TOQUES.length);
+    }
+
+    function toggleZoom() {
+      var z = document.getElementById('lbImage').classList.toggle('zoomed');
+      document.getElementById('zoomBtn').textContent = z ? '🔍 Reset Zoom' : '🔍 Zoom (1.85x)';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (document.getElementById('lightbox').classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') stepLightbox(1);
+      if (e.key === 'ArrowLeft') stepLightbox(-1);
+    });
+
+    renderStandings();
+  </script>
+</body>
+</html>
